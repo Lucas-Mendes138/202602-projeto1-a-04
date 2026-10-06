@@ -1,7 +1,7 @@
-# [Nome da solução]
+# Fatura Zero
 
 > Projeto em Ciência de Dados I · Ibmec BH · 2º semestre de 2026
-> Cliente: **Bulbe Energia** · Turma **[A/B]** · Squad **[XX]**
+> Cliente: **Bulbe Energia** · Turma **A** · Squad **04**
 
 [Uma frase que resume a solução: o que ela faz e para quem. Exemplo: "Painel que acompanha o cliente novo da Bulbe da adesão ao pagamento da primeira fatura."]
 
@@ -67,15 +67,18 @@
 
 ## 7. Quadro do projeto
 
-- **GitHub Projects:** [link para o quadro do squad]
+- **GitHub Projects:** (https://github.com/users/Lucas-Mendes138/projects/1/views/1)
 
 ## 8. Equipe
 
 | Integrante | GitHub | Papel principal |
 | --- | --- | --- |
-| [Nome] | [@usuario](https://github.com/usuario) | [ex.: Scrum Master, front-end, dados, documentação] |
-| [Nome] | [@usuario](https://github.com/usuario) | [ ] |
-| [Nome] | [@usuario](https://github.com/usuario) | [ ] |
+| Lucas Mendes | Lucas-Mendes138 (https://github.com/Lucas-Mendes138) |Documentação|
+| Heitor Silva | heitormarquessilva (https://github.com/heitormarquessilva) |Product Owner|
+| Alvaro Abranches | alvaroabranchess-afk (https://github.com/alvaroabranchess-afk)|Scrum Master|
+| Gabriel Scarpat | gabrielscarpat (https://github.com/gabrielscarpat) |Front-End|
+| Bruno Veras | brunonogveras (https://github.com/brunonogveras) |Dados|
+
 
 ## 9. Entregas
 
