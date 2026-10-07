@@ -26,6 +26,14 @@
 | --- | --- | --- | --- | --- | --- | --- |
 | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
 
+## Mapa João Antonio 3
+| Fase | Ações | Pontos de contato | Pensamentos | Emoção | Dor (com evidência da Bulbe) | Oportunidade |
+| --- | --- | --- | --- | --- | --- | --- |
+| Descoberta | Conversa com o vizinho, que conta como economiza | Boca a boca | "Quero economizar igual ao vizinho" | Curioso | Não sabe como o desconto funciona na prática | Explicação simples de como funciona a assinatura |
+| Chegada da primeira fatura | Recebe duas cobranças e liga para a Bulbe | Fatura da Cemig em papel, cobrança da Bulbe no celular, 0800 | "Será que caí em um golpe?" | Confuso, com medo | Não sabe qual fatura pagar. Evidência: [reclamação no Reclame Aqui (09/07/2026)](https://www.reclameaqui.com.br/bulbe-energia/titulo-falta-de-informacao-e-cobranca-indevida_9c55zFVCVL2lvhJJ/) de cliente que não foi avisada da cobrança separada da Cemig | Página que mostra as duas contas lado a lado e explica como o pagamento funciona, enviada por link no WhatsApp |
+
 ## Oportunidades registradas como Issues
 
 - [ ] #[número] [título da oportunidade]
+- [ ] #6 Explicação simples de como funciona a assinatura
+- [ ] #7 Página que compara as duas contas e explica o pagamento
