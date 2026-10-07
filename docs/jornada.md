@@ -2,13 +2,13 @@
 
 > Entregável da aula 19. Substitua os textos entre colchetes.
 
-## Persona
+## Persona 1
 
-- **Nome e idade:** [ ]
-- **Contexto:** [como conheceu a Bulbe, como aderiu]
-- **Objetivo:** [ ]
-- **Medos e dúvidas:** [ ]
-- **Canais que usa:** [ ]
+- **Nome e idade:** Paulo José,  45 anos
+- **Contexto:** Mora na região da Savassi em Belo Horizonte e conheceu a Bulbe por meio dos anúncios no Instagram clicou e fez o seu cadastro 
+- **Objetivo:** Tem o objetivo de abaixar suas contas de casa
+- **Medos e dúvidas:** Por não conhecer a empresa previamente não confia que isso realmente funciona e por isso não esta dando muita atenção para a plataforma ela
+- **Canais que usa:** Ele usa o Instagram, WhatsApp e o e-mail da empresa (não usa o pessoal).
 
 ## Persona 3
 
