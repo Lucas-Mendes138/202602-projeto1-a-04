@@ -18,12 +18,6 @@
 - **Medos e dúvidas:** Tem medo de ser golpe. Não entende por que passa a receber duas cobranças (Cemig e Bulbe), se o desconto é real e se consegue cancelar sem multa.
 - **Canais que usa:** Instagram, WhatsApp, site e app da Bulbe, e-mail e Reclame Aqui para pesquisar a empresa.
 
-## Oportunidades registradas como Issues
-
-- [ ] #1 Seção "Por que confiar na Bulbe" na página inicial
-- [ ] #2 Página "Como cancelar" com prazos e regra dos créditos
-- [ ] #3 Tela de confirmação "O que muda na sua conta" no cadastro
-- [ ] #4 Painel "Minha economia" com comparação mensal
 
 ## Persona 3
 
@@ -109,3 +103,5 @@ Medos e dúvidas: A conta da distribuidora chegou sem desconto nenhum, e logo de
 - [ ] #9 Saldo de créditos (kWh e R$) visível no app todo mês
 - [ ] #10 Simulador "Quanto eu economizei" desde a adesão
 - [ ] #11 Fluxo "Cancelar pelo app" com etapas e acompanhamento do pedido
+- [ ] #12 Seção "Por que confiar na Bulbe" na página inicial
+- [ ] #13 Página "Como cancelar" com prazos e regra dos créditos
