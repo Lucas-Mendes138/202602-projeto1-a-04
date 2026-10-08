@@ -42,6 +42,14 @@
 - **Medos e dúvidas:** Recebeu duas faturas, a da energia normal e a da Bulbe. Não sabe qual pagar e tem medo de ser golpe
 - **Canais que usa:** WhatsApp e telefone
 
+## Persona 4
+
+- **Nome e idade:** Ricardo Almeida, 41 anos
+- **Contexto:** Mora em uma casa no bairro Santa Tereza, em Belo Horizonte, com a esposa e duas filhas. É cliente da Bulbe desde 2023 e paga a conta de luz da família. Recebeu de um colega uma oferta de outra empresa com desconto maior e começou a pensar em trocar.
+- **Objetivo:** Pagar o menor valor possível na conta de luz e poder trocar de fornecedor quando achar uma oferta melhor, sem burocracia.
+- **Medos e dúvidas:** Tem medo de ficar "preso" à empresa ou de pagar alguma multa escondida. Não entende o que são os "créditos de energia" nem o que acontece com eles se cancelar.
+- **Canais que usa:** App da Bulbe, WhatsApp, telefone (0800), e-mail e Reclame Aqui.
+
 ## Persona 5
 - **Nome e idade:** Carol Santos, 29 anos
 - **Contexto:** Viu um anúncio da Bulbe no Instagram prometendo desconto na conta de luz sem instalar nada. Assinou sozinha pelo celular em poucos minutos, sem ler o contrato direito.
@@ -64,6 +72,16 @@ Medos e dúvidas: A conta da distribuidora chegou sem desconto nenhum, e logo de
 | Descoberta | Conversa com o vizinho, que conta como economiza | Boca a boca | "Quero economizar igual ao vizinho" | Curioso | Não sabe como o desconto funciona na prática | Explicação simples de como funciona a assinatura |
 | Chegada da primeira fatura | Recebe duas cobranças e liga para a Bulbe | Fatura da Cemig em papel, cobrança da Bulbe no celular, 0800 | "Será que caí em um golpe?" | Confuso, com medo | Não sabe qual fatura pagar. Evidência: [reclamação no Reclame Aqui (09/07/2026)](https://www.reclameaqui.com.br/bulbe-energia/titulo-falta-de-informacao-e-cobranca-indevida_9c55zFVCVL2lvhJJ/) de cliente que não foi avisada da cobrança separada da Cemig | Página que mostra as duas contas lado a lado e explica como o pagamento funciona, enviada por link no WhatsApp |
 
+## Mapa Ricardo Almeida 4
+
+| Fase | Ações | Pontos de contato | Pensamentos | Emoção | Dor (com evidência da Bulbe) | Oportunidade |
+| --- | --- | --- | --- | --- | --- | --- |
+| Uso contínuo | Paga as duas faturas todo mês há quase três anos e pede uma revisão do desconto | App, WhatsApp | "Já sou cliente antigo, não tem um desconto melhor pra mim?" | Acomodado, desvalorizado | Cliente antigo não recebe benefício por ficar. Evidência: [reclamação no Reclame Aqui (16/07/2026)](https://www.reclameaqui.com.br/bulbe-energia/cancelamento-condicionado-ao-consumo-de-creditos-por-ate-60-meses-ou-pagamento-antecipado-de-r-65819_JsO4_eHyquniBFuW/) de cliente desde 2023 que pediu revisão do desconto e ouviu que não havia condição melhor | Programa de fidelidade com desconto progressivo por tempo de casa |
+| Comparação | Recebe oferta de outra empresa e compara os descontos | WhatsApp, Google, Reclame Aqui | "Será que vale a pena trocar?" | Curioso, desconfiado | Não existe um lugar simples para ver quanto economizou até hoje e comparar com outra oferta | Simulador "Quanto eu economizei" com histórico desde a adesão |
+| Pedido de cancelamento | Liga para a central e pede o cancelamento | Telefone, WhatsApp | "Disseram que não tem fidelidade, então deve ser rápido" | Decidido | A empresa oferece um desconto maior só por pouco tempo para segurar o cliente. Evidência: na mesma reclamação de 16/07/2026, a Bulbe ofereceu 30% por apenas três meses depois que o cliente pediu para sair | Oferta de retenção clara, por escrito, com prazo e valor final |
+| Descoberta dos créditos | Descobre que ainda tem saldo de créditos e que precisa consumir ou pagar antes de sair | Telefone, e-mail | "Então eu estou preso? Ninguém me avisou disso" | Surpreso, irritado, enganado | O saldo de créditos aparece só na hora de cancelar. Evidência: o cliente foi informado de um saldo de 671,63 kWh (R$ 658,19) que poderia ficar vinculado por até 60 meses, e só foi procurado depois de reclamar no Reclame Aqui | Mostrar o saldo de créditos em kWh e em reais no app, todo mês |
+| Reclamação e desligamento | Abre reclamação no Reclame Aqui e espera resposta | Reclame Aqui, e-mail | "Só resolvem quando a gente expõe a empresa" | Frustrado, cansado | A resposta demora e a solução só vem pelo canal público. Evidência: [página da Bulbe no Reclame Aqui](https://www.reclameaqui.com.br/empresa/bulbe-energia/) mostra tempo médio de resposta de quase 9 dias e só 76,5% dos clientes dizendo que voltariam a fazer negócio (01/01 a 30/06/2026) | Fluxo "Cancelar pelo app" com etapas, prazo e status do pedido |
+
 ## Mapa Carol Santos 
 | Fase | Ações | Pontos de contato | Pensamentos | Emoção | Dor (com evidência da Bulbe) | Oportunidade |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -79,3 +97,7 @@ Medos e dúvidas: A conta da distribuidora chegou sem desconto nenhum, e logo de
 - [ ] #[número] [título da oportunidade]
 - [ ] #6 Explicação simples de como funciona a assinatura
 - [ ] #7 Página que compara as duas contas e explica o pagamento
+- [ ] #8 Programa de desconto por tempo de cliente
+- [ ] #9 Saldo de créditos (kWh e R$) visível no app todo mês
+- [ ] #10 Simulador "Quanto eu economizei" desde a adesão
+- [ ] #11 Fluxo "Cancelar pelo app" com etapas e acompanhamento do pedido
