@@ -65,7 +65,6 @@ Medos e dúvidas: A conta da distribuidora chegou sem desconto nenhum, e logo de
 | Chegada da primeira fatura | Recebe duas cobranças e liga para a Bulbe | Fatura da Cemig em papel, cobrança da Bulbe no celular, 0800 | "Será que caí em um golpe?" | Confuso, com medo | Não sabe qual fatura pagar. Evidência: [reclamação no Reclame Aqui (09/07/2026)](https://www.reclameaqui.com.br/bulbe-energia/titulo-falta-de-informacao-e-cobranca-indevida_9c55zFVCVL2lvhJJ/) de cliente que não foi avisada da cobrança separada da Cemig | Página que mostra as duas contas lado a lado e explica como o pagamento funciona, enviada por link no WhatsApp |
 
 ## Mapa Carol Santos 
-## Mapa Camila Souza
 | Fase | Ações | Pontos de contato | Pensamentos | Emoção | Dor (com evidência da Bulbe) | Oportunidade |
 | --- | --- | --- | --- | --- | --- | --- |
 | Descoberta | Vê um anúncio prometendo desconto na conta de luz | Anúncio no Instagram | "Desconto sem instalar nada? Bora" | Animada | O anúncio não deixa claro que vão existir duas cobranças. Evidência: [reclamação no Reclame Aqui (09/07/2026)](https://www.reclameaqui.com.br/bulbe-energia/titulo-falta-de-informacao-e-cobranca-indevida_9c55zFVCVL2lvhJJ/) de cliente que contratou pelo anúncio de desconto e não foi informada das cobranças separadas da Cemig | Anúncio e página de cadastro dizendo de forma explícita: "você vai receber 2 contas" |
