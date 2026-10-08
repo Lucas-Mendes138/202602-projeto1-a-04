@@ -39,7 +39,7 @@
 - **Nome e idade:** Carol Santos, 29 anos
 - **Contexto:** Viu um anúncio da Bulbe no Instagram prometendo desconto na conta de luz sem instalar nada. Assinou sozinha pelo celular em poucos minutos, sem ler o contrato direito.
 - **Objetivo:** Economizar na conta de luz pra sobrar mais no fim do mês.
-Medos e dúvidas: A conta da distribuidora chegou sem desconto nenhum, e logo depois veio um boleto da Bulbe por e-mail. Ela acha que está pagando duas contas de luz e que caiu numa furada, então deixou o boleto da Bulbe de lado até entender.
+- **Medos e dúvidas:** A conta da distribuidora chegou sem desconto nenhum, e logo depois veio um boleto da Bulbe por e-mail. Ela acha que está pagando duas contas de luz e que caiu numa furada, então deixou o boleto da Bulbe de lado até entender.
 - **Canais que usa:** WhatsApp e Instagram( quase nunca abre e-mail)
 
 
