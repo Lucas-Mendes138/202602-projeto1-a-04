@@ -66,6 +66,13 @@ Medos e dúvidas: A conta da distribuidora chegou sem desconto nenhum, e logo de
 | --- | --- | --- | --- | --- | --- | --- |
 | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
 
+## Mapa Paulo José 1
+
+| Fase | Ações | Pontos de contato | Pensamentos | Emoção | Dor (com evidência da Bulbe) | Oportunidade |
+| --- | --- | --- | --- | --- | --- | --- |
+| Descoberta | Vê um anúncio de desconto e se cadastra pelo celular | Anúncio no Instagram | "Será que isso funciona mesmo?" | Curioso, desconfiado | Não conhece a empresa e não sabe se pode confiar | Prova de confiança no anúncio, como o selo do Reclame Aqui |
+| Chegada da primeira fatura | Recebe a cobrança da Bulbe e ignora | Fatura da Cemig, cobrança da Bulbe no e-mail pessoal | "Isso deve ser golpe" | Desconfiado, indiferente | Não reconhece a cobrança e deixa de lado. Evidência: [reclamação no Reclame Aqui (09/07/2026)](https://www.reclameaqui.com.br/bulbe-energia/titulo-falta-de-informacao-e-cobranca-indevida_9c55zFVCVL2lvhJJ/) de cliente que recebia cobranças da Bulbe sem entender do que se tratavam | Fatura enviada pelo WhatsApp, com os dados dele e o comparativo "sem a Bulbe / com a Bulbe" |
+
 ## Mapa João Antonio 3
 | Fase | Ações | Pontos de contato | Pensamentos | Emoção | Dor (com evidência da Bulbe) | Oportunidade |
 | --- | --- | --- | --- | --- | --- | --- |
