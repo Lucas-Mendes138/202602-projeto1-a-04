@@ -21,3 +21,10 @@
 | ID | História | Oportunidade de origem | Prioridade | Issue |
 | --- | --- | --- | --- | --- |
 | HU02 | Como Marina, cliente que adere à Bulbe sozinha pelo celular, quero ver um resumo "O que muda na sua conta" antes de confirmar a adesão para saber que vou receber duas cobranças (Cemig e Bulbe) e quanto vou pagar em cada uma. | Adesão: Marina assina sem saber que haverá uma cobrança da Bulbe além da conta da Cemig (evidência: reclamação no Reclame Aqui de 09/07/2026). Oportunidade: resumo "O que muda na sua conta" antes de confirmar a adesão | [alta] | #[16] |
+
+### HU05
+- [ ] [critério verificável]
+      
+| ID | História | Oportunidade de origem | Prioridade | Issue |
+| --- | --- | --- | --- | --- |
+| HU05 | Como Carol Santos, quero receber minha fatura da Bulbe pelo WhatsApp com Pix e um comparativo de quanto economizei para entender o que estou pagando e pagar sem achar que é golpe. | Fatura pelo WhatsApp com Pix e comparativo "sem a Bulbe: R$ X / com a Bulbe: R$ Y" | alta | #[27] |
