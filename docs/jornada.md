@@ -105,3 +105,4 @@
 - [ ] #11 Fluxo "Cancelar pelo app" com etapas e acompanhamento do pedido
 - [ ] #12 Seção "Por que confiar na Bulbe" na página inicial
 - [ ] #13 Página "Como cancelar" com prazos e regra dos créditos
+- [ ] #14 Notificações quinzenais aos usuários
