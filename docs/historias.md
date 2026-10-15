@@ -10,3 +10,7 @@
 
 ### HU01
 - [ ] [critério verificável]
+
+| ID | História | Oportunidade de origem | Prioridade | Issue |
+| --- | --- | --- | --- | --- |
+| HU01 | Eu como usuário da Bulbe gostaria de lembretes quinzenais da Bulbe pelo Whatzap para que eu lembre que a contratei | [Notificações quinzenais aos usuários] | [alta] | #[22] |
