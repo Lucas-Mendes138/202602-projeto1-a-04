@@ -9,7 +9,8 @@
 ## Critérios de aceite
 
 ### HU01
-- [ ] [critério verificável]
+- [ ] Tópico de próxima atualização estar mudando dia a dia
+- [ ] O botão de resumo a cada 15 dias quando ativo realmente mandar as notificações
 
 | ID | História | Oportunidade de origem | Prioridade | Issue |
 | --- | --- | --- | --- | --- |
