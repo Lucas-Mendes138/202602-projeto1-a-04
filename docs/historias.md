@@ -33,6 +33,16 @@
 | --- | --- | --- | --- | --- |
 | HU03 | Como João Antônio, cliente que aderiu à Bulbe com ajuda do filho, quero ver numa mesma página qual é a fatura da Bulbe, qual é a conta da Cemig e qual delas devo pagar, para pagar sem medo de errar nem de cair em golpe. | Chegada da 1ª fatura: João recebe duas faturas, a da Cemig e a da Bulbe, e não sabe qual pagar (evidência: fatura difícil de entender e pouca transparência, na apresentação da Bulbe). Oportunidade: página que compara as duas contas e explica o pagamento. | [alta] | #[ 6] |
 
+### HU04
+- [ ] O app mostra o saldo de créditos em kWh e o valor equivalente em reais na tela inicial
+- [ ] O saldo é atualizado todo mês, junto com a fatura
+- [ ] Ao lado do saldo, há um texto explicando o que acontece com os créditos em caso de cancelamento (prazo para consumir ou valor a pagar)
+- [ ] O saldo exibido no app é o mesmo informado pela central quando o cliente pede o cancelamento
+
+| ID | História | Oportunidade de origem | Prioridade | Issue |
+| --- | --- | --- | --- | --- |
+| HU04 | Como Ricardo, cliente da Bulbe desde 2023 que está pensando em cancelar, quero ver no app todo mês meu saldo de créditos em kWh e em reais para saber o que acontece com eles se eu sair e não ser surpreendido com uma cobrança na hora do cancelamento. | Saldo de créditos (kWh e R$) visível no app todo mês (evidência: reclamação no Reclame Aqui de 16/07/2026, saldo de R$ 658,19 informado só no cancelamento) | alta | #[ ] |
+
 ### HU05
 - [ ] [critério verificável]
       
