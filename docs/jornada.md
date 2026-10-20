@@ -7,7 +7,7 @@
 - **Nome e idade:** Paulo José,  45 anos
 - **Contexto:** Mora na região da Savassi em Belo Horizonte e conheceu a Bulbe por meio dos anúncios no Instagram clicou e fez o seu cadastro 
 - **Objetivo:** Tem o objetivo de abaixar suas contas de casa
-- **Medos e dúvidas:** Por não conhecer a empresa previamente não confia que isso realmente funciona e por isso não esta dando muita atenção para a plataforma ela
+- **Medos e dúvidas:** Por não conhecer a empresa previamente não confia que isso realmente funciona e por isso não esta dando muita atenção para a plataforma ela e quando a conta chega não paga
 - **Canais que usa:** Ele usa o Instagram, WhatsApp e o e-mail da empresa (não usa o pessoal).
 
 ## Persona 2
@@ -103,6 +103,6 @@
 - [ ] #9 Saldo de créditos (kWh e R$) visível no app todo mês
 - [ ] #10 Simulador "Quanto eu economizei" desde a adesão
 - [ ] #11 Fluxo "Cancelar pelo app" com etapas e acompanhamento do pedido
-- [ ] #12 Seção "Por que confiar na Bulbe" na página inicial
-- [ ] #13 Página "Como cancelar" com prazos e regra dos créditos
-- [ ] #14 Notificações quinzenais aos usuários
+- [ ] #9 Seção "Por que confiar na Bulbe" na página inicial
+- [ ] #21 Página "Como cancelar" com prazos e regra dos créditos
+- [ ] #22 Notificações quinzenais aos usuários
