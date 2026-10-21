@@ -45,7 +45,8 @@
 | HU04 | Como Ricardo, cliente da Bulbe desde 2023 que está pensando em cancelar, quero ver no app todo mês meu saldo de créditos em kWh e em reais para saber o que acontece com eles se eu sair e não ser surpreendido com uma cobrança na hora do cancelamento. | Saldo de créditos (kWh e R$) visível no app todo mês (evidência: reclamação no Reclame Aqui de 16/07/2026, saldo de R$ 658,19 informado só no cancelamento) | alta | #[28] |
 
 ### HU05
-- [ ] [critério verificável]
+- [ ] Ao clicar em "copiar código pix o código inteiro é copiado para área de transferencia.
+- [ ] Ao clicar em "ver fatura completa" a fatura é baixada em pdf no dispositivo local.
       
 | ID | História | Oportunidade de origem | Prioridade | Issue |
 | --- | --- | --- | --- | --- |
