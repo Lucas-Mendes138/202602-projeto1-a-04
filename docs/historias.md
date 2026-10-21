@@ -17,7 +17,12 @@
 | HU01 | Eu como usuário da Bulbe gostaria de lembretes quinzenais da Bulbe pelo Whatzap para que eu lembre que a contratei | [Notificações quinzenais aos usuários] | [alta] | #[22] |
 
 ### HU02
-- [ ] [critério verificável]
+- [ ] O resumo "O que muda na sua conta" aparece na adesão antes do botão "Confirmar adesão".
+- [ ] O resumo mostra lado a lado a conta da Cemig e a conta da Bulbe, dizendo qual delas a cliente deve pagar.
+- [ ] O resumo mostra quanto a cliente vai pagar na conta da Bulbe, separando a energia solar e as taxas da Cemig repassadas.
+- [ ] O resumo compara quanto a cliente paga hoje só com a Cemig e quanto vai pagar com a Bulbe, com a economia por mês.
+- [ ] O resumo mostra quando chega a primeira conta da Bulbe.
+- [ ] O botão "Confirmar adesão" só fica ativo depois que a cliente marca que entendeu que vai continuar recebendo a conta da Cemig, mas só vai pagar a da Bulbe.
 
 | ID | História | Oportunidade de origem | Prioridade | Issue |
 | --- | --- | --- | --- | --- |
