@@ -9,7 +9,7 @@ Wireframe Historia de Usuario Marina - HU02
 ![Oque muda na conta](Hu02-Oque-muda-na-conta.png)
 Wireframe Historia de Usuario João Antonio - HU03
 ![Explicação simples de como funciona a assinatura](Hu03-tela-como-funciona-pagamento.png)
-Wireframe Historia de Usuario Rıcardo - HU04
+Wireframe Historia de Usuario Ricardo - HU04
 ![Ver créditos do usuário](hu04-creditos-usuário.png)
 Wireframe Historia de Usuario Carol Santos - HU05
 ![Pagar no Pix](hu05-pagar-pix.png)
