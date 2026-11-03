@@ -28,6 +28,12 @@
 | --- | --- | --- |
 | [Início] | [ ] | [HU01] |
 | [ ] | [ ] | [ ] |
+**Persona 1**
+A tela **Notificações** mostra o andamento do pedido em 4 etapas, quantos dias faltam para a próxima atualização e o histórico de avisos recebidos. Um interruptor, "Resumo a cada 15 dias", liga o envio dos avisos por e-mail, WhatsApp e app.
+
+| Tela | O que faz | História relacionada |
+| --- | --- | --- |
+| Notificações | Mostra a etapa atual do pedido, a contagem para a próxima atualização, as últimas atualizações (com marcação de não lidas) e o interruptor "Resumo a cada 15 dias" | HU01 |
 
 - **Histórias de usuário:** [docs/historias.md](docs/historias.md)
 - **Wireframes:** [docs/wireframes/](docs/wireframes/)
