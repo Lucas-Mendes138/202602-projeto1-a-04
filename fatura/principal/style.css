@@ -190,3 +190,741 @@ body {
 .navegacao__item--ativo .icone-inicio__laranja {
   fill: var(--bulbe-laranja);
 }
+
+
+
+/* ==========================================================
+   Tela de conversão (confirmar adesão)
+   Conteúdo do <main class="conteudo"> do template da Squad 04.
+   Padrões da jornada de contrato do Figma "Bulbe :: IBMEC"
+   (card de progresso, card principal, painéis cinza com
+   rótulo em caixa alta, avisos com borda, toggle e chips)
+   ========================================================== */
+:root {
+  /* Azul Universo (primária) */
+  --azul-universo-50: #E7E7FE;
+  --azul-universo-700: #08068D;
+
+  /* Verde Flora */
+  --verde-flora-50: #F0FDF4;
+  --verde-flora-200: #BBF7D0;
+  --verde-flora-500: #26D07C;
+  --verde-flora-700: #18814D;
+
+  /* Azul Céu */
+  --azul-ceu-600: #0762C7;
+
+  /* Amarelo Sol */
+  --amarelo-sol-50: #FFF4E6;
+  --amarelo-sol-200: #FFD399;
+  --amarelo-sol-500: #FF9E1B;
+  --amarelo-sol-700: #995700;
+
+  /* Vermelho (obrigatório / erro) */
+  --vermelho-500: #EF4444;
+  --vermelho-700: #B91C1C;
+
+  /* Grayscale */
+  --gray-50: #F8FAFC;
+  --gray-75: #F1F5F9;
+  --gray-100: #E1E6EA;
+  --gray-150: #E8EDF2;
+  --gray-300: #A4B3C1;
+  --gray-400: #B0BEC5;
+  --gray-600: #536679;
+  --gray-700: #475569;
+  --ink: #536679;
+  --white: #FFFFFF;
+
+  /* Tipografia: a jornada usa Poppins em tudo */
+  --font: "Poppins", -apple-system, system-ui, sans-serif;
+
+  /* Forma e sombra */
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-pill: 999px;
+  --shadow-progress: 0 1px 4px rgba(0, 0, 0, 0.04);
+  --shadow-card: 0 2px 16px rgba(0, 0, 0, 0.06);
+  --gradient-progress: linear-gradient(293.99deg, var(--verde-flora-500) -11.78%, var(--azul-ceu-600) 99.65%);
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--font);
+  font-size: 13px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- Estrutura ---------- */
+.conversao {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  color: var(--ink);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.conversao :where(h1, h2, h3, p, ul, ol) { margin: 0; padding: 0; }
+.conversao :where(ul, ol) { list-style: none; }
+.conversao :where(a) { color: inherit; text-decoration: none; }
+.conversao :where(strong) { font-weight: 600; }
+
+.card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+}
+
+/* ---------- Card de progresso ---------- */
+.progress-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px 20px;
+  box-shadow: var(--shadow-progress);
+}
+
+.progress-card__row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.progress-card__title {
+  flex: 1;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  color: var(--gray-600);
+}
+
+.progress-card__value {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 16px;
+  color: var(--gray-600);
+}
+
+.progress {
+  height: 6px;
+  border-radius: var(--radius-pill);
+  background: var(--gray-100);
+  overflow: hidden;
+}
+.progress span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--gradient-progress);
+}
+
+.progress-card__help {
+  flex: 1;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 20px;
+  color: var(--gray-300);
+}
+
+/* ---------- Card principal ---------- */
+.main-card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px 20px 16px;
+}
+
+.main-card__title {
+  font-size: 21px;
+  font-weight: 600;
+  line-height: 27px;
+  text-wrap: balance;
+  color: var(--azul-universo-700);
+}
+
+.main-card__subtitle {
+  margin-top: -10px;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 20px;
+  color: var(--gray-300);
+}
+
+/* Avisos com fundo e borda (padrão "Economia de até 15%...") */
+.notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 16px;
+  border: 2px solid;
+  border-radius: var(--radius-md);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 20px;
+}
+.notice i { font-size: 16px; flex-shrink: 0; }
+.notice--success {
+  display: block;
+  background: var(--verde-flora-50);
+  border-color: var(--verde-flora-200);
+  color: var(--verde-flora-700);
+}
+.notice--success:has(i) { display: flex; }
+
+/* Painel cinza com rótulo (padrão "TERMO DE ADESÃO") */
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px;
+  border: 2px solid var(--gray-150);
+  border-radius: var(--radius-md);
+  background: var(--gray-50);
+}
+
+.panel__label {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 18px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--gray-700);
+}
+
+/* Caixa branca dentro do painel (padrão da caixa do termo) */
+.box {
+  padding: 12px;
+  border: 1px solid var(--gray-100);
+  border-radius: var(--radius-md);
+  background: var(--white);
+}
+
+.helper {
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 16px;
+  color: var(--gray-600);
+}
+
+/* Ícones em badge */
+.icon-badge {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  font-size: 19px;
+}
+.icon-badge svg { width: 22px; height: 18px; }
+.icon-badge--universo { background: var(--azul-universo-700); color: var(--white); }
+.icon-badge--flora { background: var(--verde-flora-50); color: var(--verde-flora-700); }
+.icon-badge--ceu { background: var(--azul-universo-50); color: var(--azul-ceu-600); }
+.icon-badge--sol { background: var(--amarelo-sol-50); color: var(--amarelo-sol-700); }
+.icon-badge--neutral { background: var(--gray-75); color: var(--gray-600); }
+
+/* ---------- Duas contas ---------- */
+.bills {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.bill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 14px 10px 12px;
+  background: var(--white);
+  border: 1px solid var(--gray-100);
+  border-radius: var(--radius-md);
+}
+.bill--active { border: 2px solid var(--verde-flora-200); }
+
+.bill__title {
+  margin: 8px 0 10px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* Selo de status (padrão do selo "Lido") */
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: auto;
+  padding: 4px 10px;
+  border: 1px solid;
+  border-radius: var(--radius-pill);
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 16px;
+  white-space: nowrap;
+}
+.status i { font-size: 12px; }
+.status--sol { background: var(--amarelo-sol-50); border-color: var(--amarelo-sol-200); color: var(--amarelo-sol-700); }
+.status--flora { background: var(--verde-flora-50); border-color: var(--verde-flora-200); color: var(--verde-flora-700); }
+
+/* ---------- Itens da conta ---------- */
+.item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 12px;
+}
+.item + .item {
+  padding-top: 12px;
+  border-top: 1px solid var(--gray-100);
+}
+
+.item__body { flex: 1; min-width: 0; }
+
+.item__name {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.item__desc {
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 16px;
+  color: var(--gray-600);
+}
+
+.item__value {
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.item__value--primary { color: var(--azul-universo-700); }
+
+.total {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--gray-100);
+}
+
+.total__label {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.total__value {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--azul-universo-700);
+  white-space: nowrap;
+}
+.total__value sup { font-size: 10px; color: var(--gray-300); }
+
+/* ---------- Comparativo ---------- */
+.compare {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.compare__box--highlight {
+  border: 2px solid var(--verde-flora-200);
+  background: var(--verde-flora-50);
+}
+
+.compare__label {
+  font-size: 11px;
+  line-height: 16px;
+  color: var(--gray-600);
+}
+
+.compare__value {
+  margin-top: 2px;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--azul-universo-700);
+}
+.compare__value--old {
+  color: var(--gray-300);
+  text-decoration: line-through;
+}
+
+/* ---------- Linha do tempo ---------- */
+.timeline__step {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 12px;
+}
+.timeline__step:last-child { padding-bottom: 0; }
+.timeline__step:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 24px;
+  bottom: 0;
+  left: 11.5px;
+  width: 1px;
+  background: var(--gray-100);
+}
+
+.timeline__dot {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  color: var(--white);
+  font-size: 13px;
+}
+.timeline__dot--flora { background: var(--verde-flora-500); }
+.timeline__dot--ceu { background: var(--azul-ceu-600); }
+.timeline__dot--sol { background: var(--amarelo-sol-500); }
+
+.timeline__step p {
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 22px;
+}
+
+/* ---------- Toggle de aceite ---------- */
+.toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-top: 12px;
+  border-top: 1px solid var(--gray-100);
+  cursor: pointer;
+}
+.toggle input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+.toggle__track {
+  position: relative;
+  flex-shrink: 0;
+  width: 40px;
+  height: 22px;
+  border-radius: var(--radius-pill);
+  background: var(--gray-400);
+  transition: background-color 0.2s;
+}
+.toggle__track::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--white);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+.toggle input:checked + .toggle__track { background: var(--verde-flora-500); }
+.toggle input:checked + .toggle__track::after { transform: translateX(18px); }
+.toggle input:focus-visible + .toggle__track {
+  outline: 2px solid var(--azul-universo-700);
+  outline-offset: 2px;
+}
+.toggle__text {
+  font-size: 13px;
+  line-height: 18px;
+  color: var(--gray-700);
+}
+.required { color: var(--vermelho-500); }
+
+/* Mensagem quando tenta confirmar sem marcar o aceite (script.js) */
+.toggle__erro {
+  margin-top: -8px;
+  font-size: 11px;
+  line-height: 16px;
+  color: var(--vermelho-700);
+}
+
+/* ---------- Chips (padrão dos links de documento) ---------- */
+.chips {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.chip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  height: 36px;
+  padding: 0 12px;
+  border: 1px solid var(--gray-150);
+  border-radius: 10px;
+  background: var(--white);
+  font-size: 12px;
+  line-height: 18px;
+  color: var(--gray-600);
+  transition: background-color 0.2s;
+}
+.chip span {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.chip i { font-size: 13px; flex-shrink: 0; color: var(--gray-600); }
+.chip:hover { background: var(--gray-50); }
+
+/* Em celulares estreitos o ícone final sai para o texto caber inteiro */
+@media (max-width: 420px) {
+  .chip { justify-content: center; }
+  .chip span { flex: 0 1 auto; }
+  .chip i:last-child { display: none; }
+}
+
+/* Celulares bem estreitos (até 380px): menos respiro para as duas contas e os chips caberem */
+@media (max-width: 380px) {
+  .main-card { padding-right: 16px; padding-left: 16px; }
+  .panel { padding: 16px; }
+  .bills { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .bill { padding-right: 6px; padding-left: 6px; }
+  .status { padding: 4px 8px; }
+  .chip { gap: 6px; padding: 0 8px; }
+}
+
+/* ---------- Botões ---------- */
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  flex-shrink: 0;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  font-family: var(--font);
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.button--full {
+  width: 100%;
+  height: 48px;
+  border-radius: 12px;
+  font-size: 15px;
+  line-height: 22px;
+}
+.button--full { font-weight: 600; }
+
+.button--sm {
+  height: 32px;
+  padding: 6px 12px;
+  font-size: 12px;
+  line-height: 18px;
+}
+.button--sm i { font-size: 13px; }
+.button i.ti-brand-whatsapp { color: var(--verde-flora-700); }
+.button--primary i.ti-brand-whatsapp { color: inherit; }
+
+.button--primary {
+  background: var(--azul-universo-700);
+  color: var(--white);
+}
+.button--primary:hover { filter: brightness(1.15); }
+.button--primary:focus-visible {
+  outline: 2px solid var(--azul-universo-700);
+  outline-offset: 2px;
+}
+
+/* Desabilitado enquanto o aceite não foi marcado (padrão "Concordar e assinar") */
+form.main-card:not(:has(#aceite:checked)) .button--primary {
+  background: var(--gray-75);
+  color: var(--gray-300);
+  filter: none;
+  cursor: not-allowed;
+}
+
+.button--outline {
+  background: var(--white);
+  border-color: var(--gray-100);
+  color: var(--gray-600);
+}
+.button--outline:hover { background: var(--gray-50); }
+
+/* Rodapé de segurança */
+.secure {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 16px;
+  color: var(--gray-400);
+}
+.secure i { font-size: 10px; }
+
+/* ==========================================================
+   Interações (só CSS, via :target)
+   ========================================================== */
+
+/* ---------- Bottom sheets ---------- */
+.sheet {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  align-items: flex-end;
+  visibility: hidden;
+  pointer-events: none;
+  transition: visibility 0s 0.3s;
+}
+.sheet:target {
+  visibility: visible;
+  pointer-events: auto;
+  transition-delay: 0s;
+}
+
+.sheet__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(16, 24, 40, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.sheet:target .sheet__backdrop { opacity: 1; }
+
+.sheet__panel {
+  position: relative;
+  width: 100%;
+  max-width: var(--largura-maxima);
+  max-height: 88%;
+  margin: 0 auto;
+  overflow-y: auto;
+  padding: 12px 16px 20px;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  background: var(--white);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+.sheet:target .sheet__panel { transform: translateY(0); }
+
+.sheet__handle {
+  align-self: center;
+  width: 40px;
+  height: 4px;
+  border-radius: var(--radius-pill);
+  background: var(--gray-100);
+}
+
+.sheet__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sheet__title {
+  font-size: 21px;
+  font-weight: 600;
+  line-height: 27px;
+  color: var(--azul-universo-700);
+}
+
+.sheet__close {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--gray-100);
+  border-radius: 10px;
+  color: var(--gray-600);
+  font-size: 16px;
+}
+.sheet__close:hover { background: var(--gray-50); }
+
+.sheet__text {
+  font-size: 12px;
+  color: var(--gray-600);
+}
+.sheet__text strong { color: var(--ink); }
+
+/* Lista "Como funciona" / "Garantias" */
+.how__item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.how__item p {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* Código de indicação */
+.code {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-align: center;
+  color: var(--azul-universo-700);
+  user-select: all;
+  cursor: pointer;
+}
+.code:focus-visible {
+  outline: 2px solid var(--azul-universo-700);
+  outline-offset: 2px;
+}
+
+/* Trava a rolagem do fundo com um painel aberto (script.js) */
+body.painel-aberto { overflow: hidden; }
+
+/* ---------- Tela de sucesso ---------- */
+.success {
+  position: fixed;
+  top: var(--altura-topo);
+  right: 0;
+  bottom: calc(var(--altura-navegacao) + env(safe-area-inset-bottom));
+  left: 0;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: var(--largura-maxima);
+  margin: 0 auto;
+  padding: 12px 12px 20px;
+  background: var(--fundo);
+  overflow-y: auto;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease, visibility 0s 0.3s;
+}
+.success:target {
+  visibility: visible;
+  opacity: 1;
+  transition-delay: 0s;
+}
+
+.success__check {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--verde-flora-50);
+  border: 1px solid var(--verde-flora-200);
+  color: var(--verde-flora-700);
+  font-size: 28px;
+  transform: scale(0.4);
+}
+.success:target .success__check { animation: pop 0.5s 0.15s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; }
+
+@keyframes pop {
+  to { transform: scale(1); }
+}
+
+.success .main-card > .button--outline { margin-top: -8px; }
