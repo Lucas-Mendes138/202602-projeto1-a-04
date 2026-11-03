@@ -8,8 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
   <link rel="stylesheet" href="style.css">
-  <!-- estilos da tela de notificações (arquivo do Heitor, ainda não está no repositório) -->
-  <link rel="stylesheet" href="../assets/css/notificacoes.css">
+  <link rel="stylesheet" href="notificacoes.css">
 </head>
 <body>
 
@@ -55,8 +54,9 @@
   </header>
 
   <!-- Conteúdo da tela: troque apenas esta parte -->
-  <!-- Conteúdo da tela: notificações (HU01) -->
-  <main class="conteudo notif">
+  <main class="conteudo">
+
+<div class="notif">
 
     <!-- Título -->
     <div class="notif__cabecalho">
@@ -192,9 +192,11 @@
       </label>
     </section>
 
+  </div>
+
   </main>
 
-  <!-- Barra de navegação: 3 abas com os ícones oficiais -->
+  <!-- Barra de navegação: 4 abas com os ícones oficiais -->
   <nav class="navegacao" aria-label="Navegação principal">
     <a href="../inicio/index.html" class="navegacao__item navegacao__item--ativo" aria-current="page">
       <svg class="navegacao__icone icone-inicio" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -206,7 +208,7 @@
       <span class="navegacao__rotulo">Início</span>
     </a>
 
-    <a href="../fatura/principal/index.html" class="navegacao__item">
+    <a href="../fatura/index.html" class="navegacao__item">
       <svg class="navegacao__icone" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <path d="M14 2.26953V6.40007C14 6.96012 14 7.24015 14.109 7.45406C14.2049 7.64222 14.3578 7.7952 14.546 7.89108C14.7599 8.00007 15.0399 8.00007 15.6 8.00007H19.7305M16 13H8M16 17H8M10 9H8M14 2H8.8C7.11984 2 6.27976 2 5.63803 2.32698C5.07354 2.6146 4.6146 3.07354 4.32698 3.63803C4 4.27976 4 5.11984 4 6.8V17.2C4 18.8802 4 19.7202 4.32698 20.362C4.6146 20.9265 5.07354 21.3854 5.63803 21.673C6.27976 22 7.11984 22 8.8 22H15.2C16.8802 22 17.7202 22 18.362 21.673C18.9265 21.3854 19.3854 20.9265 19.673 20.362C20 19.7202 20 18.8802 20 17.2V8L14 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
@@ -218,6 +220,13 @@
         <path d="M12 2V4M12 20V22M4 12H2M6.31412 6.31412L4.8999 4.8999M17.6859 6.31412L19.1001 4.8999M6.31412 17.69L4.8999 19.1042M17.6859 17.69L19.1001 19.1042M22 12H20M17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12Z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
       <span class="navegacao__rotulo">Créditos</span>
+    </a>
+
+    <a href="../indique/index.html" class="navegacao__item">
+      <svg class="navegacao__icone" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M19 21V15M16 18H22M12 15H8C6.13623 15 5.20435 15 4.46927 15.3045C3.48915 15.7105 2.71046 16.4892 2.30448 17.4693C2 18.2044 2 19.1362 2 21M15.5 3.29076C16.9659 3.88415 18 5.32131 18 7C18 8.67869 16.9659 10.1159 15.5 10.7092M13.5 7C13.5 9.20914 11.7091 11 9.5 11C7.29086 11 5.5 9.20914 5.5 7C5.5 4.79086 7.29086 3 9.5 3C11.7091 3 13.5 4.79086 13.5 7Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span class="navegacao__rotulo">Indique</span>
     </a>
   </nav>
 
