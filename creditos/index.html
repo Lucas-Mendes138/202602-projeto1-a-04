@@ -53,9 +53,102 @@
   </header>
 
   <!-- Conteúdo da tela: troque apenas esta parte -->
-  <main class="conteudo">
-    <h1 class="conteudo__titulo">Créditos</h1>
-    <p class="conteudo__texto">Coloque aqui o conteúdo da sua tela.</p>
+  <!-- HU04 · Persona Ricardo Almeida · Issue #28 · valores fictícios -->
+  <main class="conteudo creditos">
+    <div class="creditos__titulo-linha">
+      <h1 class="conteudo__titulo">Meus créditos</h1>
+      <a class="creditos__atendimento" href="https://a.bulbe.com.br/contato" target="_blank" rel="noopener">
+        <svg class="creditos__icone creditos__icone--pequeno" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"/><path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1"/></svg>
+        Atendimento
+      </a>
+    </div>
+    <p class="creditos__instalacao">
+      Instalação <strong>Rua Mármore, 120 · Santa Tereza</strong>
+    </p>
+
+    <!-- Saldo de créditos -->
+    <section class="creditos__cartao creditos__saldo" aria-labelledby="titulo-saldo">
+      <span class="creditos__selo">
+        <svg class="creditos__icone creditos__icone--pequeno" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 3v7h6l-8 11v-7H5l8-11"/></svg>
+        <span id="titulo-saldo">Saldo de créditos</span>
+      </span>
+
+      <p class="creditos__kwh">512,40 <span>kWh</span></p>
+      <p class="creditos__reais">equivale a <strong>R$ 501,15</strong></p>
+      <p class="creditos__atualizacao">
+        Atualizado em <time datetime="2026-10-05">05/10/2026</time>, com a fatura de outubro
+      </p>
+
+      <hr class="creditos__divisor">
+
+      <ul class="creditos__resumo">
+        <li class="creditos__resumo-item">
+          <span class="creditos__resumo-icone creditos__resumo-icone--gerado">
+            <svg class="creditos__icone creditos__icone--pequeno" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M18 11l-6-6M6 11l6-6"/></svg>
+          </span>
+          <span>
+            <span class="creditos__resumo-rotulo">Gerados no mês</span>
+            <strong class="creditos__resumo-valor creditos__resumo-valor--gerado">+ 210 kWh</strong>
+          </span>
+        </li>
+        <li class="creditos__resumo-item">
+          <span class="creditos__resumo-icone creditos__resumo-icone--usado">
+            <svg class="creditos__icone creditos__icone--pequeno" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M18 13l-6 6M6 13l6 6"/></svg>
+          </span>
+          <span>
+            <span class="creditos__resumo-rotulo">Usados no mês</span>
+            <strong class="creditos__resumo-valor">− 185 kWh</strong>
+          </span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Evolução do saldo -->
+    <section class="creditos__cartao" aria-labelledby="titulo-evolucao">
+      <div class="creditos__evolucao-topo">
+        <h2 id="titulo-evolucao" class="creditos__titulo-secao">Evolução do saldo</h2>
+        <span class="creditos__apoio">últimos 6 meses</span>
+      </div>
+
+      <figure class="creditos__grafico">
+        <ol class="creditos__barras">
+          <li style="--altura: 40%"><span class="creditos__sr">Maio: 216 kWh</span></li>
+          <li style="--altura: 52%"><span class="creditos__sr">Junho: 280 kWh</span></li>
+          <li style="--altura: 60%"><span class="creditos__sr">Julho: 323 kWh</span></li>
+          <li style="--altura: 72%"><span class="creditos__sr">Agosto: 388 kWh</span></li>
+          <li style="--altura: 85%"><span class="creditos__sr">Setembro: 458 kWh</span></li>
+          <li class="atual" style="--altura: 95%" data-valor="512 kWh"><span class="creditos__sr">Outubro: 512 kWh</span></li>
+        </ol>
+        <figcaption class="creditos__meses" aria-hidden="true">
+          <span>mai</span><span>jun</span><span>jul</span><span>ago</span><span>set</span><span class="atual">out</span>
+        </figcaption>
+      </figure>
+    </section>
+
+    <!-- E se eu cancelar? -->
+    <section class="creditos__aviso" aria-labelledby="titulo-cancelar">
+      <h2 id="titulo-cancelar" class="creditos__aviso-titulo">
+        <svg class="creditos__icone" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg>
+        E se eu cancelar?
+      </h2>
+      <p>Seus créditos continuam valendo: use nas próximas contas por até 60 meses ou quite o saldo de uma vez, sem multa.</p>
+      <p>Valor para quitar hoje: <strong>R$ 501,15</strong></p>
+
+      <details class="creditos__regras">
+        <summary>Ver regras completas</summary>
+        <ul>
+          <li>O saldo mostrado aqui é o mesmo informado pela central de atendimento.</li>
+          <li>Os créditos são atualizados uma vez por mês, junto com a fatura.</li>
+          <li>Ao cancelar, você escolhe: consumir o saldo nas contas da Cemig ou pagar o valor em reais.</li>
+          <li>Não existe multa de fidelidade.</li>
+        </ul>
+      </details>
+    </section>
+
+    <a class="creditos__botao" href="#">
+      <svg class="creditos__icone" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h4l3 8l4-16l3 8h4"/></svg>
+      Ver quanto economizei
+    </a>
   </main>
 
   <!-- Barra de navegação: 3 abas com os ícones oficiais -->
