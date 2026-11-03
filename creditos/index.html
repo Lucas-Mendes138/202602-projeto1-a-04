@@ -63,7 +63,7 @@
       </a>
     </div>
     <p class="creditos__instalacao">
-      Instalação <strong>Rua Mármore, 120 · Santa Tereza</strong>
+      Instalação <strong id="instalacao">Rua Mármore, 120 · Santa Tereza</strong>
     </p>
 
     <!-- Saldo de créditos -->
@@ -73,10 +73,10 @@
         <span id="titulo-saldo">Saldo de créditos</span>
       </span>
 
-      <p class="creditos__kwh">512,40 <span>kWh</span></p>
-      <p class="creditos__reais">equivale a <strong>R$ 501,15</strong></p>
+      <p class="creditos__kwh"><data id="saldo-kwh" value="512.4">512,40</data> <span>kWh</span></p>
+      <p class="creditos__reais">equivale a <strong id="saldo-reais">R$ 501,15</strong></p>
       <p class="creditos__atualizacao">
-        Atualizado em <time datetime="2026-10-05">05/10/2026</time>, com a fatura de outubro
+        Atualizado em <time id="saldo-data" datetime="2026-10-05">05/10/2026</time>, com a fatura de <span id="saldo-mes">outubro</span>
       </p>
 
       <hr class="creditos__divisor">
@@ -88,7 +88,7 @@
           </span>
           <span>
             <span class="creditos__resumo-rotulo">Gerados no mês</span>
-            <strong class="creditos__resumo-valor creditos__resumo-valor--gerado">+ 210 kWh</strong>
+            <strong id="mes-gerados" class="creditos__resumo-valor creditos__resumo-valor--gerado">+ 240 kWh</strong>
           </span>
         </li>
         <li class="creditos__resumo-item">
@@ -97,7 +97,7 @@
           </span>
           <span>
             <span class="creditos__resumo-rotulo">Usados no mês</span>
-            <strong class="creditos__resumo-valor">− 185 kWh</strong>
+            <strong id="mes-usados" class="creditos__resumo-valor">− 186 kWh</strong>
           </span>
         </li>
       </ul>
@@ -111,15 +111,15 @@
       </div>
 
       <figure class="creditos__grafico">
-        <ol class="creditos__barras">
-          <li style="--altura: 40%"><span class="creditos__sr">Maio: 216 kWh</span></li>
-          <li style="--altura: 52%"><span class="creditos__sr">Junho: 280 kWh</span></li>
-          <li style="--altura: 60%"><span class="creditos__sr">Julho: 323 kWh</span></li>
-          <li style="--altura: 72%"><span class="creditos__sr">Agosto: 388 kWh</span></li>
-          <li style="--altura: 85%"><span class="creditos__sr">Setembro: 458 kWh</span></li>
-          <li class="atual" style="--altura: 95%" data-valor="512 kWh"><span class="creditos__sr">Outubro: 512 kWh</span></li>
+        <ol id="grafico-barras" class="creditos__barras">
+          <li style="--altura: 42%"><span class="creditos__sr">Maio: 216 kWh</span></li>
+          <li style="--altura: 55%"><span class="creditos__sr">Junho: 280 kWh</span></li>
+          <li style="--altura: 63%"><span class="creditos__sr">Julho: 323 kWh</span></li>
+          <li style="--altura: 76%"><span class="creditos__sr">Agosto: 388 kWh</span></li>
+          <li style="--altura: 89%"><span class="creditos__sr">Setembro: 458 kWh</span></li>
+          <li class="atual" style="--altura: 100%" data-valor="512 kWh"><span class="creditos__sr">Outubro: 512 kWh</span></li>
         </ol>
-        <figcaption class="creditos__meses" aria-hidden="true">
+        <figcaption id="grafico-meses" class="creditos__meses" aria-hidden="true">
           <span>mai</span><span>jun</span><span>jul</span><span>ago</span><span>set</span><span class="atual">out</span>
         </figcaption>
       </figure>
@@ -131,8 +131,8 @@
         <svg class="creditos__icone" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg>
         E se eu cancelar?
       </h2>
-      <p>Seus créditos continuam valendo: use nas próximas contas por até 60 meses ou quite o saldo de uma vez, sem multa.</p>
-      <p>Valor para quitar hoje: <strong>R$ 501,15</strong></p>
+      <p>Seus créditos continuam valendo: use nas próximas contas por até <span id="prazo-meses">60</span> meses ou quite o saldo de uma vez, sem multa.</p>
+      <p>Valor para quitar hoje: <strong id="valor-quitar">R$ 501,15</strong></p>
 
       <details class="creditos__regras">
         <summary>Ver regras completas</summary>
@@ -178,5 +178,7 @@
     </a>
   </nav>
 
+  <!-- Dados da tela: lidos de data/creditos.json (precisa do Live Server) -->
+  <script type="module" src="script.js"></script>
 </body>
 </html>
