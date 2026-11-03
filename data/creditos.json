@@ -1,0 +1,22 @@
+[
+  {
+    "clienteId": 4,
+    "instalacao": "Rua Mármore, 120 · Santa Tereza",
+    "atualizadoEm": "2026-10-05",
+    "tarifaKwh": 0.97804,
+    "prazoConsumoMeses": 60,
+    "mesAtual": {
+      "referencia": "2026-10",
+      "geradosKwh": 240.4,
+      "usadosKwh": 186
+    },
+    "historico": [
+      { "referencia": "2026-05", "saldoKwh": 216 },
+      { "referencia": "2026-06", "saldoKwh": 280 },
+      { "referencia": "2026-07", "saldoKwh": 323 },
+      { "referencia": "2026-08", "saldoKwh": 388 },
+      { "referencia": "2026-09", "saldoKwh": 458 },
+      { "referencia": "2026-10", "saldoKwh": 512.4 }
+    ]
+  }
+]
