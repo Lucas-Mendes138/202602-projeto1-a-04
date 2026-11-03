@@ -54,8 +54,164 @@
 
   <!-- Conteúdo da tela: troque apenas esta parte -->
   <main class="conteudo">
-    <h1 class="conteudo__titulo">Início</h1>
-    <p class="conteudo__texto">Coloque aqui o conteúdo da sua tela.</p>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bulbe | Notificações</title>
+
+  <!-- Fonte da Bulbe (Poppins) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Estilos desta tela. Este arquivo fica em pages/, por isso o caminho começa com ../ -->
+  <link rel="stylesheet" href="../assets/css/notificacoes.css">
+</head>
+<body class="notif-pagina">
+
+  <!-- Só o conteúdo da tela. O topo (logo, sino, banner) e a barra inferior ficam por conta do restante do site. -->
+  <main class="notif">
+
+    <!-- Título -->
+    <div class="notif__cabecalho">
+      <div>
+        <h1 class="notif__titulo">Notificações</h1>
+        <p class="notif__subtitulo">Acompanhe as novidades do seu produto</p>
+      </div>
+      <span class="notif__selo">2 novas</span>
+    </div>
+
+    <!-- Andamento do pedido -->
+    <section class="notif__progresso" aria-label="Andamento do seu pedido">
+      <div class="notif__anel" role="img" aria-label="Etapa 3 de 4">
+        <svg viewBox="0 0 100 100" aria-hidden="true">
+          <circle class="notif__anel-fundo" cx="50" cy="50" r="44.9"/>
+          <circle class="notif__anel-valor" cx="50" cy="50" r="44.9" pathLength="100"/>
+        </svg>
+        <span class="notif__anel-numero">3/4</span>
+      </div>
+      <div>
+        <p class="notif__rotulo">Atualização quinzenal</p>
+        <h2 class="notif__etapa-titulo">Esperando respostas da CEMIG</h2>
+      </div>
+    </section>
+
+    <!-- Linha do tempo (as classes --concluida, --atual e --futura mudam a cor de cada etapa) -->
+    <ol class="notif__etapas">
+      <li class="notif__etapa notif__etapa--concluida">
+        <span class="notif__marcador">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>
+        </span>
+        <div>
+          <h3 class="notif__etapa-nome">Solicitação recebida</h3>
+          <p class="notif__etapa-status">Concluído</p>
+        </div>
+      </li>
+      <li class="notif__etapa notif__etapa--concluida">
+        <span class="notif__marcador">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>
+        </span>
+        <div>
+          <h3 class="notif__etapa-nome">Análise do produto</h3>
+          <p class="notif__etapa-status">Concluído</p>
+        </div>
+      </li>
+      <li class="notif__etapa notif__etapa--atual" aria-current="step">
+        <span class="notif__marcador">3</span>
+        <div>
+          <h3 class="notif__etapa-nome">Esperando respostas da CEMIG</h3>
+          <p class="notif__etapa-status">Etapa atual</p>
+        </div>
+      </li>
+      <li class="notif__etapa notif__etapa--futura">
+        <span class="notif__marcador">4</span>
+        <div>
+          <h3 class="notif__etapa-nome">Você está apto a receber seu desconto!</h3>
+          <p class="notif__etapa-status">Previsão: 18 de junho</p>
+        </div>
+      </li>
+    </ol>
+
+    <!-- Próxima atualização -->
+    <div class="notif__proxima">
+      <svg class="notif__proxima-icone" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="9.5"/><path d="M12 7v5.2l3.2 2"/>
+      </svg>
+      <div>
+        <p class="notif__proxima-rotulo">Próxima atualização</p>
+        <p class="notif__proxima-valor">Em 12 dias</p>
+      </div>
+    </div>
+
+    <!-- Últimas atualizações -->
+    <section class="notif__atualizacoes" aria-labelledby="notif-ultimas">
+      <div class="notif__atualizacoes-topo">
+        <h2 class="notif__atualizacoes-titulo" id="notif-ultimas">Últimas atualizações</h2>
+        <button class="notif__link" type="button">Marcar como lidas</button>
+      </div>
+
+      <!-- Troque os href="#" pelo link da página de detalhe de cada aviso -->
+      <ul class="notif__lista">
+        <li>
+          <a class="notif__item notif__item--nova" href="#">
+            <span class="notif__item-icone">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>
+            </span>
+            <span class="notif__item-texto">
+              <span class="notif__item-titulo">Uma nova etapa foi concluída <i class="notif__ponto"></i><span class="notif__so-leitor">(não lida)</span></span>
+              <span class="notif__item-descricao">A análise do seu produto foi finalizada. Agora vamos iniciar a preparação.</span>
+              <time class="notif__item-data">Hoje, às 09:42</time>
+            </span>
+            <svg class="notif__seta" width="8" height="14" viewBox="0 0 8 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1.5 1.5L7 7l-5.5 5.5"/></svg>
+          </a>
+        </li>
+        <li>
+          <a class="notif__item notif__item--nova" href="#">
+            <span class="notif__item-icone">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M12 7v5.2l3.2 2"/></svg>
+            </span>
+            <span class="notif__item-texto">
+              <span class="notif__item-titulo">Seu resumo quinzenal chegou <i class="notif__ponto"></i><span class="notif__so-leitor">(não lida)</span></span>
+              <span class="notif__item-descricao">Está tudo certo por aqui. A previsão para o produto ficar pronto continua a mesma.</span>
+              <time class="notif__item-data">15 de maio, às 14:18</time>
+            </span>
+            <svg class="notif__seta" width="8" height="14" viewBox="0 0 8 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1.5 1.5L7 7l-5.5 5.5"/></svg>
+          </a>
+        </li>
+        <li>
+          <a class="notif__item" href="#">
+            <span class="notif__item-icone">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"/></svg>
+            </span>
+            <span class="notif__item-texto">
+              <span class="notif__item-titulo">Produto em análise</span>
+              <span class="notif__item-descricao">Recebemos sua solicitação e nossa equipe já começou a cuidar de tudo.</span>
+              <time class="notif__item-data">30 de abril, às 10:05</time>
+            </span>
+            <svg class="notif__seta" width="8" height="14" viewBox="0 0 8 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1.5 1.5L7 7l-5.5 5.5"/></svg>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Resumo a cada 15 dias (interruptor feito só com HTML e CSS, sem JavaScript) -->
+    <section class="notif__resumo">
+      <div>
+        <h2 class="notif__resumo-titulo">Resumo a cada 15 dias</h2>
+        <p class="notif__resumo-texto">Receba novidades por e-mail, WhatsApp e pelo App</p>
+      </div>
+      <label class="notif__interruptor">
+        <input type="checkbox" checked aria-label="Receber resumo a cada 15 dias">
+        <span class="notif__interruptor-trilho"></span>
+      </label>
+    </section>
+
+  </main>
+
+</body>
+</html>
   </main>
 
   <!-- Barra de navegação: 4 abas com os ícones oficiais -->
