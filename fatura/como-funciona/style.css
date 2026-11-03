@@ -564,3 +564,23 @@ body {
   font-weight: 600;
   color: #2D3748;
 }
+
+/* link de voltar para a tela principal de Faturas */
+.voltar {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 4px 6px 12px;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+/* botão que é link (ex.: "Pagar com PIX" leva para o detalhe da fatura) */
+.conteudo a.botao {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--branco);
+  text-decoration: none;
+}
