@@ -190,3 +190,255 @@ body {
 .navegacao__item--ativo .icone-inicio__laranja {
   fill: var(--bulbe-laranja);
 }
+
+/* =========================================================
+   Tela Créditos · HU04 (Bruno)
+   Tudo abaixo começa com .creditos para não afetar o template
+   ========================================================= */
+.creditos {
+  --cred-verde: #20AC66;
+  --cred-verde-escuro: #1E8451;
+  --cred-verde-claro: #BDEBD3;
+  --cred-verde-fundo: #F0FDF5;
+  --cred-verde-borda: #64D3AE;
+  --cred-azul-fundo: #EEF1FA;
+  --cred-bege: #FFF4E6;
+  --cred-marrom: #7A5C33;
+  --cred-link: #3535A1;
+  --cred-suave: #8A97A6;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.creditos__titulo-linha {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.creditos__titulo-linha .conteudo__titulo { margin-bottom: 0; }
+
+.creditos__icone {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.creditos__icone--pequeno { width: 16px; height: 16px; }
+
+.creditos__atendimento {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 4px;
+  padding: 7px 12px;
+  border: 1px solid var(--linha);
+  border-radius: 10px;
+  background: var(--branco);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--texto);
+  text-decoration: none;
+}
+.creditos__atendimento .creditos__icone { color: var(--cred-verde); }
+
+.creditos__instalacao {
+  margin: -6px 6px 0;
+  font-size: 12px;
+  color: var(--cred-suave);
+}
+.creditos__instalacao strong { color: var(--texto); font-weight: 500; }
+
+.creditos__cartao {
+  background: var(--branco);
+  border: 1px solid var(--linha);
+  border-radius: 16px;
+  padding: 16px;
+}
+
+/* ---- Saldo ---- */
+.creditos__saldo { padding: 20px 16px; }
+
+.creditos__selo {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border: 1px solid var(--cred-verde-borda);
+  border-radius: 999px;
+  background: var(--cred-verde-fundo);
+  color: var(--cred-verde-escuro);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.creditos__kwh {
+  margin: 10px 0 0;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--azul-bulbe);
+}
+.creditos__kwh span { font-size: 18px; font-weight: 600; }
+
+.creditos__reais { margin: 4px 0 0; font-size: 15px; }
+.creditos__reais strong { color: var(--cred-verde); font-weight: 600; }
+
+.creditos__atualizacao {
+  margin: 4px 0 0;
+  font-size: 11px;
+  color: var(--cred-suave);
+}
+
+.creditos__divisor {
+  border: 0;
+  border-top: 1px solid var(--linha);
+  margin: 14px 0;
+}
+
+.creditos__resumo {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.creditos__resumo-item { display: flex; align-items: center; gap: 8px; }
+
+.creditos__resumo-icone {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+}
+.creditos__resumo-icone--gerado { background: var(--cred-verde-fundo); color: var(--cred-verde-escuro); }
+.creditos__resumo-icone--usado { background: var(--cred-azul-fundo); color: var(--azul-bulbe); }
+
+.creditos__resumo-rotulo { display: block; font-size: 11px; color: var(--cred-suave); }
+.creditos__resumo-valor { display: block; font-size: 14px; font-weight: 600; color: var(--azul-bulbe); }
+.creditos__resumo-valor--gerado { color: var(--cred-verde-escuro); }
+
+/* ---- Evolução do saldo (gráfico só com CSS) ---- */
+.creditos__evolucao-topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 26px;
+}
+
+.creditos__titulo-secao {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--azul-bulbe);
+}
+
+.creditos__apoio { font-size: 12px; color: var(--cred-suave); }
+
+.creditos__grafico { margin: 0; }
+
+.creditos__barras {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  height: 96px;
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.creditos__barras li {
+  position: relative;
+  flex: 1;
+  height: var(--altura);
+  background: var(--cred-verde-claro);
+  border-radius: 6px 6px 2px 2px;
+}
+.creditos__barras li.atual { background: var(--cred-verde); }
+.creditos__barras li.atual::before {
+  content: attr(data-valor);
+  position: absolute;
+  bottom: calc(100% + 4px);
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--azul-bulbe);
+}
+
+.creditos__meses { display: flex; gap: 10px; margin-top: 6px; }
+.creditos__meses span { flex: 1; text-align: center; font-size: 11px; color: var(--cred-suave); }
+.creditos__meses span.atual { color: var(--azul-bulbe); font-weight: 600; }
+
+.creditos__sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* ---- Aviso "E se eu cancelar?" ---- */
+.creditos__aviso {
+  background: var(--cred-bege);
+  border-radius: 12px;
+  padding: 14px 16px;
+  color: var(--cred-marrom);
+  font-size: 13px;
+}
+.creditos__aviso p { margin: 6px 0 0; line-height: 1.55; }
+.creditos__aviso strong { font-weight: 600; }
+
+.creditos__aviso-titulo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.creditos__regras { margin-top: 8px; }
+.creditos__regras summary {
+  cursor: pointer;
+  color: var(--cred-link);
+  font-weight: 500;
+  text-decoration: underline;
+  list-style: none;
+}
+.creditos__regras summary::-webkit-details-marker { display: none; }
+.creditos__regras ul { margin: 4px 0 0; padding-left: 18px; }
+.creditos__regras li { margin-top: 4px; }
+
+/* ---- Botão principal ---- */
+.creditos__botao {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 14px;
+  border-radius: 12px;
+  background: var(--azul-bulbe);
+  color: var(--branco);
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.creditos a:focus-visible,
+.creditos summary:focus-visible {
+  outline: 2px solid var(--bulbe-azul);
+  outline-offset: 2px;
+}
