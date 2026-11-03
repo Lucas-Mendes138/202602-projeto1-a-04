@@ -3,17 +3,16 @@
 > Projeto em Ciência de Dados I · Ibmec BH · 2º semestre de 2026
 > Cliente: **Bulbe Energia** · Turma **A** · Squad **04**
 
-[Uma frase que resume a solução: o que ela faz e para quem. Exemplo: "Painel que acompanha o cliente novo da Bulbe da adesão ao pagamento da primeira fatura."]
-
+O Fatura Zero é um app web que acompanha o cliente novo da Bulbe da adesão até o pagamento da primeira fatura, deixando claro o que pagar, para quem e quanto ele economiza.
 ---
 
 ## 1. Problema
 
-[Qual parte da dor da Bulbe o squad escolheu atacar e por quê. Use pelo menos um dado da apresentação da Bulbe como evidência.]
+O squad escolheu atacar a inadimplência da primeira fatura. Esse é o momento em que o cliente novo ainda não confia na Bulbe, passa a receber duas cobranças (Cemig e Bulbe) e não sabe qual pagar. Muitas vezes nem recebe a cobrança no canal que realmente usa. Na apresentação da Bulbe, cerca de 20% das mensagens não chegam ao cliente, e houve clientes que ficaram 20 dias sem nenhuma comunicação. Quem não recebe nem entende a fatura não paga.
 
-- **Dor escolhida:** [ex.: clientes que não recebem ou não entendem a 1ª fatura]
-- **Evidência:** [ex.: cerca de 20% de falha na entrega de mensagens de WhatsApp]
-- **Indicador que a solução pretende mover:** [pagamento da 1ª fatura | churn do 1º mês | entregabilidade das comunicações]
+- **Dor escolhida:** clientes que não recebem ou não entendem a 1ª fatura e, sem saber qual das duas contas pagar e com medo de golpe, deixam a cobrança da Bulbe de lado.
+- **Evidência:** cerca de 20% de falha na entrega de mensagens e clientes até 20 dias sem comunicação, segundo a apresentação da Bulbe. Reforço: o modelo antigo de fatura não deixava claro o que era cobrado, e a adoção do Pix no pagamento de faturas cresceu mais de 50%.
+- **Indicador que a solução pretende mover:** pagamento da 1ª fatura
 
 ## 2. Persona e jornada
 
@@ -22,12 +21,20 @@
 
 ## 3. Solução
 
-[Descrição curta da solução e das principais telas.]
+O Fatura Zero reúne, num só lugar, tudo que o cliente novo precisa até a primeira fatura:
+
+1. antes de aderir, o que muda na conta dele;
+2. durante a espera, avisos no canal que ele usa;
+3. quando a fatura chega, uma explicação de qual conta pagar e o pagamento por Pix, com o comparativo de economia.
 
 | Tela | O que faz | História relacionada |
-| --- | --- | --- |
 | [Início] | [ ] | [HU01] |
-| [ ] | [ ] | [ ] |
+| --- | --- | --- |
+| Notificações | Mostra a etapa atual do pedido, a contagem para a próxima atualização, as últimas atualizações (com marcação de não lidas) e o interruptor "Resumo a cada 15 dias" | HU01 |
+| O que muda na sua conta	| Antes de confirmar a adesão, mostra que a conta da Cemig continua chegando mas só a da Bulbe é paga, quanto o cliente vai pagar e economizar, e quando chega a 1ª fatura|	HU02 |
+| Como funciona o pagamento |	Explica o passo a passo da adesão até a 1ª fatura, mostra lado a lado a fatura da Bulbe (“pagar”) e a conta da Cemig (“não pagar”) e ensina a conferir se a fatura é verdadeira| HU03 |
+| Meus créditos | Mostra o saldo de créditos em kWh e em reais, a evolução dos últimos meses e o que acontece com os créditos se o cliente cancelar| HU04 |
+| Faturas (pagar com Pix)	| Mostra a fatura do mês com valor, vencimento, consumo e o comparativo “sem a Bulbe / com a Bulbe”, além do Pix copia e cola e do download da fatura em PDF | HU05 |
 
 - **Histórias de usuário:** [docs/historias.md](docs/historias.md)
 - **Wireframes:** [docs/wireframes/](docs/wireframes/)

@@ -1,0 +1,586 @@
+/* ===== Template de tela · Bulbe · Squad 04 ===== */
+
+/* ===== Cores e medidas (tiradas do Figma) ===== */
+:root {
+  --azul-bulbe: #08068D;
+  --fundo: #F4F7FB;
+  --branco: #FFFFFF;
+  --texto: #4B5C73;
+  --aba-inativa-icone: #C2CCD6;
+  --aba-inativa-texto: #6B7A90;
+  --linha: #E1E6EA;
+  --lilas: #E7E7FE;
+
+  /* cores do símbolo da Bulbe (ícone Início ativo) */
+  --bulbe-azul: #0762C7;
+  --bulbe-verde: #26D07C;
+  --bulbe-laranja: #FF9E1B;
+
+  --altura-topo: 72px;
+  --altura-navegacao: 64px;
+  --largura-maxima: 480px;
+}
+
+/* ===== Reset e base ===== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', Arial, sans-serif;
+  color: var(--texto);
+  background-color: var(--fundo);
+}
+
+/* ===== Barra do topo ===== */
+.topo {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--altura-topo);
+  max-width: var(--largura-maxima);
+  margin: 0 auto;
+  padding: 0 20px;
+  background-color: var(--azul-bulbe);
+}
+
+.topo__logo {
+  display: flex;
+}
+
+.topo__logo svg {
+  width: 149px;
+  height: 30px;
+}
+
+.topo__perfil {
+  position: absolute;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  overflow: hidden;
+  color: var(--azul-bulbe);
+  background-color: var(--lilas);
+  border: 2px solid var(--branco);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* foto do usuário, quando houver */
+.topo__perfil img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ===== Conteúdo da tela ===== */
+.conteudo {
+  max-width: var(--largura-maxima);
+  margin: 0 auto;
+  padding: 12px 12px calc(var(--altura-navegacao) + 24px + env(safe-area-inset-bottom));
+}
+
+.conteudo__titulo {
+  margin: 12px 6px 8px;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--azul-bulbe);
+}
+
+.conteudo__texto {
+  margin: 0 6px;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+/* ===== Barra de navegação ===== */
+.navegacao {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  display: flex;
+  max-width: var(--largura-maxima);
+  margin: 0 auto;
+  padding-bottom: env(safe-area-inset-bottom);
+  background-color: var(--branco);
+  border-top: 1px solid var(--linha);
+}
+
+.navegacao__item {
+  position: relative;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  height: var(--altura-navegacao);
+  padding-top: 10px;
+  color: var(--aba-inativa-icone);
+  text-decoration: none;
+}
+
+.navegacao__icone {
+  width: 24px;
+  height: 24px;
+}
+
+.navegacao__rotulo {
+  font-size: 12px;
+  line-height: 1.2;
+  color: var(--aba-inativa-texto);
+}
+
+/* aba ativa: ícone e texto em azul, com o traço em cima */
+.navegacao__item--ativo {
+  color: var(--azul-bulbe);
+}
+
+.navegacao__item--ativo .navegacao__rotulo {
+  font-weight: 600;
+  color: var(--azul-bulbe);
+}
+
+.navegacao__item--ativo::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 50%;
+  width: 40px;
+  height: 3px;
+  background-color: var(--azul-bulbe);
+  border-radius: 2px;
+  transform: translateX(-50%);
+}
+
+.navegacao__item:focus-visible,
+.topo__perfil:focus-visible,
+.topo__logo:focus-visible {
+  outline: 2px solid var(--bulbe-azul);
+  outline-offset: 2px;
+}
+
+/* ícone Início: cinza quando inativo, colorido quando ativo */
+.icone-inicio path {
+  fill: currentColor;
+}
+
+.navegacao__item--ativo .icone-inicio__e {
+  fill: var(--azul-bulbe);
+}
+
+.navegacao__item--ativo .icone-inicio__azul {
+  fill: var(--bulbe-azul);
+}
+
+.navegacao__item--ativo .icone-inicio__verde {
+  fill: var(--bulbe-verde);
+}
+
+.navegacao__item--ativo .icone-inicio__laranja {
+  fill: var(--bulbe-laranja);
+}
+
+/* ===== Tela de faturas: como funciona o pagamento ===== */
+.conteudo p,
+.conteudo h1,
+.conteudo h2,
+.conteudo h3 {
+  margin: 0;
+}
+
+.conteudo a {
+  color: var(--azul-bulbe);
+}
+
+/* card de status da jornada */
+.status {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 18px;
+  background-color: var(--branco);
+  border-radius: 20px;
+}
+
+.status__linha {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.status__titulo {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.status__porcentagem {
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.status__barra {
+  height: 8px;
+  overflow: hidden;
+  background-color: var(--linha);
+  border-radius: 4px;
+}
+
+.status__progresso {
+  height: 100%;
+  background: linear-gradient(90deg, #0B72BB, #1DB092);
+  border-radius: 4px;
+}
+
+.status__ajuda {
+  font-size: 14px;
+  color: #A4B3C1;
+}
+
+/* card principal */
+.pagamento {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 12px;
+  padding: 22px 18px;
+  background-color: var(--branco);
+  border-radius: 20px;
+}
+
+.pagamento__titulo {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.27;
+  color: var(--azul-bulbe);
+}
+
+.aviso {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  font-size: 14px;
+  line-height: 1.35;
+  color: #6B3F00;
+  background-color: #FFF4E6;
+  border-radius: 14px;
+}
+
+.aviso__icone {
+  flex-shrink: 0;
+}
+
+/* etapas */
+.etapas {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.etapa {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 14px 16px;
+  border: 1px solid var(--linha);
+  border-radius: 12px;
+}
+
+.etapa__titulo {
+  font-size: 15px;
+}
+
+.etapa__titulo strong,
+.opcao__texto strong {
+  font-weight: 600;
+  color: #2D3748;
+}
+
+.etapa__texto {
+  margin-top: 4px;
+  font-size: 13px;
+  line-height: 1.38;
+  color: #A4B3C1;
+}
+
+.etapa__icone {
+  flex-shrink: 0;
+}
+
+/* etapa 4 (atual) */
+.etapa-atual {
+  overflow: hidden;
+  border: 2px solid #6E6CF9;
+  border-radius: 14px;
+}
+
+.etapa-atual__cabecalho {
+  width: 100%;
+  padding: 14px 16px;
+  font-family: inherit;
+  font-size: 16px;
+  text-align: left;
+  color: var(--azul-bulbe);
+  background-color: var(--lilas);
+  border: 0;
+  border-bottom: 2px solid #6E6CF9;
+  cursor: pointer;
+}
+
+.etapa-atual__cabecalho strong {
+  font-weight: 600;
+}
+
+.etapa-atual__cabecalho[aria-expanded="false"] {
+  border-bottom: 0;
+}
+
+.etapa-atual__conteudo {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 18px 16px;
+}
+
+.etapa-atual__conteudo[hidden] {
+  display: none;
+}
+
+.etapa-atual__pergunta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.etapa-atual__pergunta h2 {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.etapa-atual__texto {
+  font-size: 13px;
+  line-height: 1.38;
+  color: #A4B3C1;
+}
+
+.etapa-atual__subtitulo {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--azul-bulbe);
+}
+
+.etapa-atual__explicacao {
+  font-size: 13px;
+  line-height: 1.38;
+}
+
+/* contas: pagar e não pagar */
+.conta {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 16px;
+  border: 1px solid var(--linha);
+  border-radius: 12px;
+}
+
+.conta--pagar {
+  background-color: #F0FDF4;
+  border-color: #BBF7D0;
+}
+
+.conta__titulo {
+  font-size: 15px;
+  font-weight: 600;
+  color: #2D3748;
+}
+
+.conta__titulo span {
+  margin-left: 4px;
+  font-weight: 400;
+}
+
+.conta--pagar .conta__titulo {
+  color: #18814D;
+}
+
+.conta--pagar .conta__titulo span {
+  color: #76B796;
+}
+
+.conta--nao-pagar .conta__titulo span {
+  color: #EF4444;
+}
+
+.conta__texto {
+  margin-top: 4px;
+  font-size: 12.5px;
+  line-height: 1.38;
+}
+
+.conta__icone {
+  flex-shrink: 0;
+}
+
+/* botões */
+.botao {
+  min-width: 92px;
+  height: 38px;
+  padding: 0 16px;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--branco);
+  background-color: var(--azul-bulbe);
+  border: 0;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.botao--grande {
+  width: 100%;
+  height: 49px;
+  font-size: 16px;
+}
+
+.botao:focus-visible,
+.etapa-atual__cabecalho:focus-visible {
+  outline: 2px solid var(--bulbe-azul);
+  outline-offset: 2px;
+}
+
+.mensagem-pix {
+  font-size: 13px;
+  text-align: center;
+  color: #18814D;
+}
+
+.mensagem-pix:empty {
+  display: none;
+}
+
+.divisor {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  color: var(--aba-inativa-texto);
+}
+
+.divisor::before,
+.divisor::after {
+  content: "";
+  flex: 1;
+  height: 2px;
+  background-color: var(--linha);
+}
+
+.opcao {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 15px;
+  border: 1px solid var(--linha);
+  border-radius: 12px;
+}
+
+.opcao__texto {
+  flex: 1;
+  font-size: 14px;
+}
+
+.vencimento {
+  font-size: 13px;
+  line-height: 1.45;
+  color: #A4B3C1;
+}
+
+.vencimento strong {
+  font-weight: 600;
+  color: #8FA0B2;
+}
+
+/* caixa de segurança */
+.seguranca {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 12px;
+  padding: 18px 20px;
+  background-color: #F0FCF5;
+  border: 1px solid #64D3AE;
+  border-radius: 20px;
+}
+
+.seguranca__topo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.seguranca__titulo {
+  flex: 1;
+  font-size: 15px;
+  font-weight: 700;
+  color: #18814D;
+}
+
+.selo {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #18814D;
+  background-color: var(--branco);
+  border: 1px solid #B1E8D7;
+  border-radius: 8px;
+}
+
+.seguranca__texto {
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.seguranca__texto strong {
+  font-weight: 600;
+  color: #2D3748;
+}
+
+/* link de voltar para a tela principal de Faturas */
+.voltar {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 4px 6px 12px;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+/* botão que é link (ex.: "Pagar com PIX" leva para o detalhe da fatura) */
+.conteudo a.botao {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--branco);
+  text-decoration: none;
+}

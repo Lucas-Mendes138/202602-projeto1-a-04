@@ -99,10 +99,10 @@
 - [ ] #[número] [título da oportunidade]
 - [ ] #6 Explicação simples de como funciona a assinatura
 - [ ] #7 Página que compara as duas contas e explica o pagamento
-- [ ] #8 Programa de desconto por tempo de cliente
-- [ ] #9 Saldo de créditos (kWh e R$) visível no app todo mês
-- [ ] #10 Simulador "Quanto eu economizei" desde a adesão
-- [ ] #11 Fluxo "Cancelar pelo app" com etapas e acompanhamento do pedido
+- [ ] #26 Programa de desconto por tempo de cliente
+- [ ] #28 Saldo de créditos (kWh e R$) visível no app todo mês
+- [ ] #25 Simulador "Quanto eu economizei" desde a adesão
+- [ ] #24 Fluxo "Cancelar pelo app" com etapas e acompanhamento do pedido
 - [ ] #12 Seção "Por que confiar na Bulbe" na página inicial
 - [ ] #13 Página "Como cancelar" com prazos e regra dos créditos
 - [ ] #14 Notificações quinzenais aos usuários
