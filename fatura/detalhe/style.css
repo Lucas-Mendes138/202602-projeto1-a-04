@@ -1,0 +1,709 @@
+/* =====================================================
+   Tela Faturas (HU05) · Bulbe · Squad 04
+   Visual baseado na tela "Padronizar Tela de Referência" do Figma
+   ===================================================== */
+
+:root {
+  --azul: #1109A8;
+  --azul-escuro: #10069F;
+  --azul-logo: #0762C7;
+  --verde: #23BD79;
+  --verde-escuro: #217447;
+  --laranja: #F2953C;
+  --fundo: #EEF0F4;
+  --branco: #FFFFFF;
+  --texto: #343A44;
+  --texto-suave: #697280;
+  --linha: #DFE3E8;
+  --borda-card: #EDF2FB;
+  --largura: 390px;
+  --altura-nav: 72px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  font-family: 'Poppins', Arial, sans-serif;
+  color: #3F4753;
+  background: var(--fundo);
+}
+
+button,
+select {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.app {
+  position: relative;
+  width: min(100%, var(--largura));
+  min-height: 100vh;
+  margin: 0 auto;
+  background: var(--azul);
+  box-shadow: 0 0 32px rgb(27 34 57 / 12%);
+}
+
+/* ===== Topo ===== */
+.topo {
+  position: relative;
+  z-index: 10;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  height: 87px;
+  padding: 0 18px;
+  color: var(--branco);
+}
+
+.topo__icone {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  place-items: center;
+  color: inherit;
+  background: transparent;
+  border: 0;
+}
+
+.topo__icone svg {
+  width: 30px;
+  height: 30px;
+}
+
+.topo__icone--sino svg {
+  width: 27px;
+  height: 27px;
+}
+
+.topo__logo {
+  display: flex;
+}
+
+/* só a palavra "bulbe" e o símbolo, sem o slogan, como no app */
+.topo__logo svg {
+  width: 105px;
+  height: 30px;
+}
+
+.topo__acoes {
+  display: flex;
+  justify-self: end;
+  align-items: center;
+  gap: 15px;
+}
+
+.topo__avatar {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  place-items: center;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--azul);
+  background: #E3E6F7;
+  border: 3px solid var(--branco);
+  border-radius: 50%;
+}
+
+.menu {
+  position: absolute;
+  z-index: 30;
+  top: 68px;
+  left: 18px;
+  display: flex;
+  width: 180px;
+  flex-direction: column;
+  padding: 8px;
+  background: var(--branco);
+  border-radius: 12px;
+  box-shadow: 0 10px 35px rgb(23 24 48 / 24%);
+}
+
+.menu[hidden] {
+  display: none;
+}
+
+.menu a {
+  padding: 11px 12px;
+  color: #323B49;
+  text-decoration: none;
+  border-radius: 8px;
+}
+
+.menu a:hover {
+  background: #F1F3FB;
+}
+
+/* ===== Banner de indicação ===== */
+.banner {
+  display: grid;
+  height: 53px;
+  grid-template-columns: 72px 88px 1fr 30px;
+  align-items: center;
+  padding-right: 14px;
+  overflow: hidden;
+  color: var(--branco);
+  text-decoration: none;
+  background: linear-gradient(100deg, #EC9137 0%, #E99A4B 30%, #4351A7 61%, #34469C 100%);
+}
+
+.banner__arte {
+  position: relative;
+  align-self: stretch;
+  overflow: hidden;
+}
+
+.banner__arte i {
+  position: absolute;
+  display: block;
+  border-radius: 7px;
+  transform: rotate(-25deg);
+}
+
+.banner__arte i:nth-child(1) {
+  top: 8px;
+  left: -7px;
+  width: 43px;
+  height: 25px;
+  background: #41C97E;
+}
+
+.banner__arte i:nth-child(2) {
+  top: 26px;
+  left: 25px;
+  width: 44px;
+  height: 20px;
+  background: #82B9E8;
+}
+
+.banner__arte i:nth-child(3) {
+  top: -8px;
+  left: 44px;
+  width: 26px;
+  height: 35px;
+  background: #E4DFEB;
+}
+
+.banner__titulo {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.02;
+}
+
+.banner__texto {
+  padding-left: 3px;
+  font-size: 15px;
+  white-space: nowrap;
+}
+
+.banner__texto strong {
+  font-weight: 700;
+}
+
+.banner__seta {
+  width: 27px;
+  height: 27px;
+}
+
+/* ===== Seletor de instalação ===== */
+.instalacao {
+  display: flex;
+  min-height: 80px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 23px 13px;
+  color: var(--branco);
+}
+
+.instalacao__rotulo {
+  font-size: 17px;
+}
+
+.instalacao__campo {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.instalacao__select {
+  min-width: 220px;
+  min-height: 51px;
+  padding: 0 52px 0 30px;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--branco);
+  background: #1322A8;
+  border: 2px solid #21C982;
+  border-radius: 10px;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.instalacao__select option {
+  color: var(--azul);
+}
+
+.instalacao__seta {
+  position: absolute;
+  right: 22px;
+  width: 0;
+  height: 0;
+  border-top: 8px solid var(--branco);
+  border-right: 7px solid transparent;
+  border-left: 7px solid transparent;
+  pointer-events: none;
+}
+
+/* ===== Painel branco ===== */
+.painel {
+  min-height: calc(100vh - 220px);
+  padding: 21px 23px calc(var(--altura-nav) + 32px + env(safe-area-inset-bottom));
+  background: var(--branco);
+  border-radius: 26px 26px 0 0;
+}
+
+.painel__cabecalho {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 0 10px 14px;
+}
+
+.painel__cabecalho h1 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 400;
+  color: #76808E;
+}
+
+.selo-oficial {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 9px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--azul);
+  white-space: nowrap;
+  background: #EEF2FF;
+  border-radius: 6px;
+}
+
+.selo-oficial svg {
+  width: 14px;
+  height: 14px;
+}
+
+.intro {
+  margin: 0 0 16px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--texto);
+}
+
+/* ===== Card da fatura ===== */
+.fatura,
+.pix {
+  position: relative;
+  background: var(--branco);
+  border: 3px solid var(--borda-card);
+  border-radius: 10px;
+}
+
+.fatura {
+  padding: 19px 16px 15px;
+}
+
+.fatura__faixa {
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  left: -3px;
+  display: flex;
+  height: 5px;
+  overflow: hidden;
+  border-radius: 10px 10px 0 0;
+}
+
+.fatura__faixa i {
+  flex: 1;
+}
+
+.fatura__faixa i:nth-child(1) { background: #F6A43A; }
+.fatura__faixa i:nth-child(2) { background: #42B579; }
+.fatura__faixa i:nth-child(3) { background: #4B84F3; }
+
+.fatura__linha-topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.fatura__linha-topo h2 {
+  margin: 0;
+  font-size: 11px;
+  font-weight: 600;
+  color: #646C79;
+}
+
+.status-aberta {
+  padding: 5px 10px;
+  font-size: 14px;
+  color: #244F9F;
+  background: #EFF3FB;
+  border-radius: 5px;
+}
+
+.fatura__valor {
+  margin: 2px 0 0;
+  font-size: 34px;
+  font-weight: 600;
+  letter-spacing: -1.5px;
+  color: var(--azul-escuro);
+}
+
+.fatura__dados {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 11px;
+  border-top: 1px solid var(--linha);
+  border-bottom: 1px solid var(--linha);
+}
+
+.fatura__dados > div {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0 11px;
+}
+
+.fatura__dados > div + div {
+  padding-left: 16px;
+  border-left: 1px solid var(--linha);
+}
+
+.fatura__dados span,
+.comparativo__rotulos {
+  font-size: 12px;
+  color: var(--texto-suave);
+}
+
+.fatura__dados strong {
+  font-size: 17px;
+  color: #343B47;
+}
+
+/* ===== Economia ===== */
+.economia {
+  display: grid;
+  grid-template-columns: 44px 1fr auto;
+  align-items: center;
+  gap: 9px;
+  margin: 14px 0 13px;
+  padding: 10px 11px;
+  background: #E8F6EF;
+  border-radius: 10px;
+}
+
+.economia__icone {
+  display: grid;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  color: var(--branco);
+  background: #3BBE7B;
+  border-radius: 50%;
+}
+
+.economia__icone svg {
+  width: 25px;
+  height: 25px;
+}
+
+.economia__texto {
+  display: flex;
+  flex-direction: column;
+}
+
+.economia__texto span {
+  font-size: 11px;
+  color: #25834F;
+}
+
+.economia__texto strong {
+  font-size: 21px;
+  line-height: 1.1;
+  color: var(--verde-escuro);
+}
+
+.economia__percentual {
+  padding: 4px 7px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #207347;
+  background: var(--branco);
+  border-radius: 6px;
+}
+
+/* ===== Comparativo sem / com a Bulbe ===== */
+.comparativo__rotulos,
+.comparativo__valores {
+  display: flex;
+  justify-content: space-between;
+}
+
+.comparativo__barra {
+  display: flex;
+  height: 8px;
+  margin: 5px 0 3px;
+  overflow: hidden;
+  border-radius: 99px;
+}
+
+.comparativo__barra i:first-child {
+  width: 55%;
+  background: var(--laranja);
+}
+
+.comparativo__barra i:last-child {
+  flex: 1;
+  background: #48B376;
+}
+
+.comparativo__valores {
+  align-items: center;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.comparativo__valores del {
+  color: #68707C;
+}
+
+.comparativo__valores strong {
+  color: #237744;
+}
+
+/* ===== Botões ===== */
+.botao-contorno,
+.botao-principal {
+  display: flex;
+  width: 100%;
+  min-height: 52px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 9px;
+}
+
+.botao-contorno {
+  margin-top: 14px;
+  color: var(--azul-escuro);
+  text-decoration: none;
+  background: var(--branco);
+  border: 2px solid var(--azul-escuro);
+}
+
+.botao-principal {
+  color: var(--branco);
+  background: var(--azul-escuro);
+  border: 0;
+}
+
+.botao-contorno svg,
+.botao-principal svg {
+  width: 20px;
+  height: 20px;
+}
+
+.aviso-pagamento {
+  margin: 15px 0 13px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--texto);
+}
+
+/* ===== Pix ===== */
+.pix {
+  padding: 16px;
+}
+
+.pix__cabecalho {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.pix__simbolo {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  color: var(--azul-escuro);
+  background: #EDF1FF;
+  border-radius: 10px;
+}
+
+.pix__simbolo svg {
+  width: 25px;
+  height: 25px;
+}
+
+.pix__cabecalho > div:last-child {
+  display: flex;
+  flex-direction: column;
+}
+
+.pix__cabecalho span {
+  font-size: 10px;
+  font-weight: 600;
+  color: #67707C;
+}
+
+.pix__cabecalho strong {
+  font-size: 19px;
+  line-height: 1.2;
+  color: var(--azul-escuro);
+}
+
+.pix__codigo {
+  display: block;
+  margin: 13px 0;
+  padding: 13px 12px;
+  overflow: hidden;
+  font-family: ui-monospace, Menlo, Consolas, monospace;
+  font-size: 12px;
+  color: #626B78;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  background: #F8F9FB;
+  border: 1px dashed #B8C0CF;
+  border-radius: 7px;
+}
+
+/* quando a cópia automática falha, mostra o código inteiro */
+.pix__codigo--aberto {
+  white-space: normal;
+  word-break: break-all;
+}
+
+.pix__aviso {
+  min-height: 1em;
+  margin: 8px 0 0;
+  font-size: 13px;
+  font-weight: 500;
+  text-align: center;
+  color: #25834F;
+}
+
+/* ===== Barra de navegação (abas do projeto, visual do Figma) ===== */
+.navegacao {
+  position: fixed;
+  z-index: 20;
+  bottom: 0;
+  left: 50%;
+  display: grid;
+  width: min(100%, var(--largura));
+  height: var(--altura-nav);
+  grid-template-columns: repeat(4, 1fr);
+  padding-bottom: env(safe-area-inset-bottom);
+  background: rgb(255 255 255 / 97%);
+  border-top: 1px solid #E5E7EC;
+  box-shadow: 0 -5px 14px rgb(35 41 59 / 8%);
+  transform: translateX(-50%);
+}
+
+.navegacao__item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  color: #C3CAD3;
+  text-decoration: none;
+}
+
+.navegacao__icone {
+  width: 26px;
+  height: 26px;
+}
+
+.navegacao__rotulo {
+  font-size: 13px;
+  color: #9AA3AF;
+}
+
+.navegacao__item--ativo {
+  color: var(--azul-escuro);
+}
+
+.navegacao__item--ativo .navegacao__rotulo {
+  font-weight: 500;
+  color: var(--azul-escuro);
+}
+
+.navegacao__item--ativo::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  right: 0;
+  left: 0;
+  height: 3px;
+  background: var(--azul-escuro);
+}
+
+/* ícone Início: cinza quando inativo */
+.icone-inicio path {
+  fill: currentColor;
+}
+
+/* ===== Foco no teclado ===== */
+a:focus-visible,
+button:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--azul-logo);
+  outline-offset: 2px;
+}
+
+/* ===== Celulares estreitos ===== */
+@media (max-width: 390px) {
+  .topo {
+    padding-inline: 14px;
+  }
+
+  .topo__acoes {
+    gap: 8px;
+  }
+
+  .instalacao {
+    padding-inline: 16px;
+  }
+
+  .instalacao__select {
+    min-width: 202px;
+    font-size: 18px;
+  }
+
+  .painel {
+    padding-inline: 16px;
+  }
+
+  .banner {
+    grid-template-columns: 62px 76px 1fr 24px;
+  }
+
+  .banner__titulo,
+  .banner__texto {
+    font-size: 13px;
+  }
+}
