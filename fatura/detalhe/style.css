@@ -1,8 +1,197 @@
-/* =====================================================
-   Tela Faturas (HU05) · Bulbe · Squad 04
-   Visual baseado na tela "Padronizar Tela de Referência" do Figma
-   ===================================================== */
+/* ===== Template de tela · Bulbe · Squad 04 ===== */
 
+/* ===== Cores e medidas (tiradas do Figma) ===== */
+:root {
+  --azul-bulbe: #08068D;
+  --fundo: #F4F7FB;
+  --branco: #FFFFFF;
+  --texto: #4B5C73;
+  --aba-inativa-icone: #C2CCD6;
+  --aba-inativa-texto: #6B7A90;
+  --linha: #E1E6EA;
+  --lilas: #E7E7FE;
+
+  /* cores do símbolo da Bulbe (ícone Início ativo) */
+  --bulbe-azul: #0762C7;
+  --bulbe-verde: #26D07C;
+  --bulbe-laranja: #FF9E1B;
+
+  --altura-topo: 72px;
+  --altura-navegacao: 64px;
+  --largura-maxima: 480px;
+}
+
+/* ===== Reset e base ===== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', Arial, sans-serif;
+  color: var(--texto);
+  background-color: var(--fundo);
+}
+
+/* ===== Barra do topo ===== */
+.topo {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--altura-topo);
+  max-width: var(--largura-maxima);
+  margin: 0 auto;
+  padding: 0 20px;
+  background-color: var(--azul-bulbe);
+}
+
+.topo__logo {
+  display: flex;
+}
+
+.topo__logo svg {
+  width: 149px;
+  height: 30px;
+}
+
+.topo__perfil {
+  position: absolute;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  overflow: hidden;
+  color: var(--azul-bulbe);
+  background-color: var(--lilas);
+  border: 2px solid var(--branco);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* foto do usuário, quando houver */
+.topo__perfil img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ===== Conteúdo da tela ===== */
+.conteudo {
+  max-width: var(--largura-maxima);
+  margin: 0 auto;
+  padding: 12px 12px calc(var(--altura-navegacao) + 24px + env(safe-area-inset-bottom));
+}
+
+.conteudo__titulo {
+  margin: 12px 6px 8px;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--azul-bulbe);
+}
+
+.conteudo__texto {
+  margin: 0 6px;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+/* ===== Barra de navegação ===== */
+.navegacao {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  display: flex;
+  max-width: var(--largura-maxima);
+  margin: 0 auto;
+  padding-bottom: env(safe-area-inset-bottom);
+  background-color: var(--branco);
+  border-top: 1px solid var(--linha);
+}
+
+.navegacao__item {
+  position: relative;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  height: var(--altura-navegacao);
+  padding-top: 10px;
+  color: var(--aba-inativa-icone);
+  text-decoration: none;
+}
+
+.navegacao__icone {
+  width: 24px;
+  height: 24px;
+}
+
+.navegacao__rotulo {
+  font-size: 12px;
+  line-height: 1.2;
+  color: var(--aba-inativa-texto);
+}
+
+/* aba ativa: ícone e texto em azul, com o traço em cima */
+.navegacao__item--ativo {
+  color: var(--azul-bulbe);
+}
+
+.navegacao__item--ativo .navegacao__rotulo {
+  font-weight: 600;
+  color: var(--azul-bulbe);
+}
+
+.navegacao__item--ativo::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 50%;
+  width: 40px;
+  height: 3px;
+  background-color: var(--azul-bulbe);
+  border-radius: 2px;
+  transform: translateX(-50%);
+}
+
+.navegacao__item:focus-visible,
+.topo__perfil:focus-visible,
+.topo__logo:focus-visible {
+  outline: 2px solid var(--bulbe-azul);
+  outline-offset: 2px;
+}
+
+/* ícone Início: cinza quando inativo, colorido quando ativo */
+.icone-inicio path {
+  fill: currentColor;
+}
+
+.navegacao__item--ativo .icone-inicio__e {
+  fill: var(--azul-bulbe);
+}
+
+.navegacao__item--ativo .icone-inicio__azul {
+  fill: var(--bulbe-azul);
+}
+
+.navegacao__item--ativo .icone-inicio__verde {
+  fill: var(--bulbe-verde);
+}
+
+.navegacao__item--ativo .icone-inicio__laranja {
+  fill: var(--bulbe-laranja);
+}
+
+/* ===== Tela de detalhe da fatura (HU05 · Lucas Mendes) ===== */
 :root {
   --azul: #1109A8;
   --azul-escuro: #10069F;
@@ -10,26 +199,10 @@
   --verde: #23BD79;
   --verde-escuro: #217447;
   --laranja: #F2953C;
-  --fundo: #EEF0F4;
-  --branco: #FFFFFF;
-  --texto: #343A44;
+  --detalhe-texto: #343A44;
   --texto-suave: #697280;
-  --linha: #DFE3E8;
+  --detalhe-linha: #DFE3E8;
   --borda-card: #EDF2FB;
-  --largura: 390px;
-  --altura-nav: 72px;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  min-width: 320px;
-  font-family: 'Poppins', Arial, sans-serif;
-  color: #3F4753;
-  background: var(--fundo);
 }
 
 button,
@@ -38,177 +211,23 @@ select {
   cursor: pointer;
 }
 
-.app {
-  position: relative;
-  width: min(100%, var(--largura));
-  min-height: 100vh;
-  margin: 0 auto;
-  background: var(--azul);
-  box-shadow: 0 0 32px rgb(27 34 57 / 12%);
-}
-
-/* ===== Topo ===== */
-.topo {
-  position: relative;
-  z-index: 10;
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  align-items: center;
-  height: 87px;
-  padding: 0 18px;
-  color: var(--branco);
-}
-
-.topo__icone {
-  display: grid;
-  width: 36px;
-  height: 36px;
+/* a tela continua o azul do topo, como no app da Bulbe */
+.detalhe {
   padding: 0;
-  place-items: center;
-  color: inherit;
-  background: transparent;
-  border: 0;
+  color: #3F4753;
+  background-color: var(--azul-bulbe);
 }
 
-.topo__icone svg {
-  width: 30px;
-  height: 30px;
-}
-
-.topo__icone--sino svg {
-  width: 27px;
-  height: 27px;
-}
-
-.topo__logo {
-  display: flex;
-}
-
-/* só a palavra "bulbe" e o símbolo, sem o slogan, como no app */
-.topo__logo svg {
-  width: 105px;
-  height: 30px;
-}
-
-.topo__acoes {
-  display: flex;
-  justify-self: end;
+/* link de voltar para a tela principal de Faturas */
+.voltar {
+  display: inline-flex;
   align-items: center;
-  gap: 15px;
-}
-
-.topo__avatar {
-  display: grid;
-  width: 42px;
-  height: 42px;
-  padding: 0;
-  place-items: center;
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--azul);
-  background: #E3E6F7;
-  border: 3px solid var(--branco);
-  border-radius: 50%;
-}
-
-.menu {
-  position: absolute;
-  z-index: 30;
-  top: 68px;
-  left: 18px;
-  display: flex;
-  width: 180px;
-  flex-direction: column;
-  padding: 8px;
-  background: var(--branco);
-  border-radius: 12px;
-  box-shadow: 0 10px 35px rgb(23 24 48 / 24%);
-}
-
-.menu[hidden] {
-  display: none;
-}
-
-.menu a {
-  padding: 11px 12px;
-  color: #323B49;
-  text-decoration: none;
-  border-radius: 8px;
-}
-
-.menu a:hover {
-  background: #F1F3FB;
-}
-
-/* ===== Banner de indicação ===== */
-.banner {
-  display: grid;
-  height: 53px;
-  grid-template-columns: 72px 88px 1fr 30px;
-  align-items: center;
-  padding-right: 14px;
-  overflow: hidden;
+  gap: 6px;
+  margin: 12px 23px 8px;
+  font-size: 14px;
+  font-weight: 500;
   color: var(--branco);
   text-decoration: none;
-  background: linear-gradient(100deg, #EC9137 0%, #E99A4B 30%, #4351A7 61%, #34469C 100%);
-}
-
-.banner__arte {
-  position: relative;
-  align-self: stretch;
-  overflow: hidden;
-}
-
-.banner__arte i {
-  position: absolute;
-  display: block;
-  border-radius: 7px;
-  transform: rotate(-25deg);
-}
-
-.banner__arte i:nth-child(1) {
-  top: 8px;
-  left: -7px;
-  width: 43px;
-  height: 25px;
-  background: #41C97E;
-}
-
-.banner__arte i:nth-child(2) {
-  top: 26px;
-  left: 25px;
-  width: 44px;
-  height: 20px;
-  background: #82B9E8;
-}
-
-.banner__arte i:nth-child(3) {
-  top: -8px;
-  left: 44px;
-  width: 26px;
-  height: 35px;
-  background: #E4DFEB;
-}
-
-.banner__titulo {
-  font-size: 16px;
-  font-weight: 600;
-  line-height: 1.02;
-}
-
-.banner__texto {
-  padding-left: 3px;
-  font-size: 15px;
-  white-space: nowrap;
-}
-
-.banner__texto strong {
-  font-weight: 700;
-}
-
-.banner__seta {
-  width: 27px;
-  height: 27px;
 }
 
 /* ===== Seletor de instalação ===== */
@@ -264,7 +283,7 @@ select {
 /* ===== Painel branco ===== */
 .painel {
   min-height: calc(100vh - 220px);
-  padding: 21px 23px calc(var(--altura-nav) + 32px + env(safe-area-inset-bottom));
+  padding: 21px 23px calc(var(--altura-navegacao) + 32px + env(safe-area-inset-bottom));
   background: var(--branco);
   border-radius: 26px 26px 0 0;
 }
@@ -306,7 +325,7 @@ select {
   margin: 0 0 16px;
   font-size: 15px;
   line-height: 1.5;
-  color: var(--texto);
+  color: var(--detalhe-texto);
 }
 
 /* ===== Card da fatura ===== */
@@ -374,8 +393,8 @@ select {
   display: grid;
   grid-template-columns: 1fr 1fr;
   margin-top: 11px;
-  border-top: 1px solid var(--linha);
-  border-bottom: 1px solid var(--linha);
+  border-top: 1px solid var(--detalhe-linha);
+  border-bottom: 1px solid var(--detalhe-linha);
 }
 
 .fatura__dados > div {
@@ -386,7 +405,7 @@ select {
 
 .fatura__dados > div + div {
   padding-left: 16px;
-  border-left: 1px solid var(--linha);
+  border-left: 1px solid var(--detalhe-linha);
 }
 
 .fatura__dados span,
@@ -529,7 +548,7 @@ select {
   margin: 15px 0 13px;
   font-size: 14px;
   line-height: 1.5;
-  color: var(--texto);
+  color: var(--detalhe-texto);
 }
 
 /* ===== Pix ===== */
@@ -605,68 +624,6 @@ select {
   color: #25834F;
 }
 
-/* ===== Barra de navegação (abas do projeto, visual do Figma) ===== */
-.navegacao {
-  position: fixed;
-  z-index: 20;
-  bottom: 0;
-  left: 50%;
-  display: grid;
-  width: min(100%, var(--largura));
-  height: var(--altura-nav);
-  grid-template-columns: repeat(4, 1fr);
-  padding-bottom: env(safe-area-inset-bottom);
-  background: rgb(255 255 255 / 97%);
-  border-top: 1px solid #E5E7EC;
-  box-shadow: 0 -5px 14px rgb(35 41 59 / 8%);
-  transform: translateX(-50%);
-}
-
-.navegacao__item {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 3px;
-  color: #C3CAD3;
-  text-decoration: none;
-}
-
-.navegacao__icone {
-  width: 26px;
-  height: 26px;
-}
-
-.navegacao__rotulo {
-  font-size: 13px;
-  color: #9AA3AF;
-}
-
-.navegacao__item--ativo {
-  color: var(--azul-escuro);
-}
-
-.navegacao__item--ativo .navegacao__rotulo {
-  font-weight: 500;
-  color: var(--azul-escuro);
-}
-
-.navegacao__item--ativo::before {
-  content: "";
-  position: absolute;
-  top: -1px;
-  right: 0;
-  left: 0;
-  height: 3px;
-  background: var(--azul-escuro);
-}
-
-/* ícone Início: cinza quando inativo */
-.icone-inicio path {
-  fill: currentColor;
-}
-
 /* ===== Foco no teclado ===== */
 a:focus-visible,
 button:focus-visible,
@@ -677,14 +634,6 @@ select:focus-visible {
 
 /* ===== Celulares estreitos ===== */
 @media (max-width: 390px) {
-  .topo {
-    padding-inline: 14px;
-  }
-
-  .topo__acoes {
-    gap: 8px;
-  }
-
   .instalacao {
     padding-inline: 16px;
   }
@@ -696,14 +645,5 @@ select:focus-visible {
 
   .painel {
     padding-inline: 16px;
-  }
-
-  .banner {
-    grid-template-columns: 62px 76px 1fr 24px;
-  }
-
-  .banner__titulo,
-  .banner__texto {
-    font-size: 13px;
   }
 }
