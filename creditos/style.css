@@ -81,6 +81,26 @@ body {
   object-fit: cover;
 }
 
+/* tela secundária: seta de voltar na esquerda e logo na direita */
+.topo--secundaria {
+  justify-content: space-between;
+  padding-left: 12px;
+}
+
+.topo__voltar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  color: var(--branco);
+}
+
+.topo__voltar svg {
+  width: 20px;
+  height: 20px;
+}
+
 /* ===== Conteúdo da tela ===== */
 .conteudo {
   max-width: var(--largura-maxima);
@@ -165,7 +185,8 @@ body {
 
 .navegacao__item:focus-visible,
 .topo__perfil:focus-visible,
-.topo__logo:focus-visible {
+.topo__logo:focus-visible,
+.topo__voltar:focus-visible {
   outline: 2px solid var(--bulbe-azul);
   outline-offset: 2px;
 }
