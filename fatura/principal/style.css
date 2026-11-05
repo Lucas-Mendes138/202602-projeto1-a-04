@@ -18,7 +18,7 @@
 
   --altura-topo: 72px;
   --altura-navegacao: 64px;
-  --largura-maxima: 480px;
+  --largura-maxima: 375px; /* iPhone SE: 375 x 667 */
 }
 
 /* ===== Reset e base ===== */
@@ -928,3 +928,40 @@ body.painel-aberto { overflow: hidden; }
 }
 
 .success .main-card > .button--outline { margin-top: -8px; }
+
+/* ===== Tela no tamanho do iPhone SE (só aparece assim em telas grandes, como no computador) ===== */
+@media (min-width: 600px) {
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 32px 0;
+    background-color: #E3E9F2;
+  }
+
+  /* cartão de 375 x 667 com cantos arredondados */
+  .aparelho {
+    position: relative;
+    flex-shrink: 0;
+    width: 375px;
+    height: 667px;
+    overflow: hidden;
+    background-color: var(--fundo);
+    border: 1px solid var(--linha);
+    border-radius: 28px;
+    box-shadow: 0 24px 64px rgba(8, 6, 141, 0.18);
+    transform: translateZ(0); /* faz o topo e a barra de navegação ficarem presos dentro do cartão */
+  }
+
+  /* a rolagem acontece dentro do cartão */
+  .aparelho__tela {
+    height: 100%;
+    overflow-y: auto;
+    scrollbar-width: none;
+  }
+
+  .aparelho__tela::-webkit-scrollbar {
+    display: none;
+  }
+}
