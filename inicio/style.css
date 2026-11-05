@@ -230,6 +230,7 @@ body {
     width: 375px;
     height: 667px;
     overflow: hidden;
+    overflow: clip; /* impede o navegador de rolar o cartão ao focar algo escondido */
     background-color: var(--fundo);
     border: 1px solid var(--linha);
     border-radius: 28px;
