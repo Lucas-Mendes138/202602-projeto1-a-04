@@ -754,6 +754,13 @@ form.main-card:not(:has(#aceite:checked)) .button--primary {
 }
 .button--outline:hover { background: var(--gray-50); }
 
+/* Botão só visual (Atendimento): mesmo visual, sem clique */
+.button--static,
+.button--static:hover {
+  background: var(--white);
+  cursor: default;
+}
+
 /* Rodapé de segurança */
 .secure {
   display: flex;
