@@ -159,26 +159,79 @@
             <h3 class="etapa-atual__subtitulo">Por que pago só a fatura da Bulbe?</h3>
             <p class="etapa-atual__explicacao">A Bulbe injeta créditos de energia na Cemig, e isso diminui a conta de luz. A fatura da Bulbe soma o valor da Bulbe com o da conta da Cemig já com desconto. Por isso o total é menor do que você pagava nos meses anteriores.</p>
 
-            <!-- Formas de pagamento -->
-            <a href="../detalhe/index.html" class="botao botao--grande">Pagar com PIX</a>
+            <!-- Formas de pagamento: Pix, Boleto e Cartão (valor e vencimento vêm de data/faturas.json) -->
+            <section class="pagar" aria-labelledby="pagar-titulo">
+              <h3 class="pagar__titulo" id="pagar-titulo">Como você quer pagar?</h3>
 
-            <div class="divisor"><span>ou</span></div>
+              <div class="pagar__resumo">
+                <div>
+                  <p class="pagar__rotulo">Valor da fatura</p>
+                  <p class="pagar__valor" id="pagar-valor">R$ 168,40</p>
+                </div>
+                <div class="pagar__vencimento">
+                  <p class="pagar__rotulo">Vence em</p>
+                  <p class="pagar__data" id="pagar-vencimento">10/10/2026</p>
+                </div>
+              </div>
 
-            <div class="opcao">
-              <p class="opcao__texto">Pagar com <strong>Boleto</strong></p>
-              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M6.74475 6.675C6.92696 6.15704 7.28659 5.72028 7.75996 5.44208C8.23334 5.16387 8.78989 5.06218 9.33106 5.155C9.87223 5.24783 10.3631 5.52918 10.7167 5.94923C11.0703 6.36929 11.2638 6.90093 11.263 7.45C11.263 9 8.938 9.775 8.938 9.775M9 12.875H9.00775M16.75 9C16.75 13.2802 13.2802 16.75 9 16.75C4.71979 16.75 1.25 13.2802 1.25 9C1.25 4.71979 4.71979 1.25 9 1.25C13.2802 1.25 16.75 4.71979 16.75 9Z" stroke="#98A2B3" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-              <button type="button" class="botao">Ver</button>
-            </div>
+              <div class="seletor" role="tablist" aria-label="Forma de pagamento">
+                <button type="button" class="seletor__opcao" role="tab" id="aba-pix" aria-controls="painel-pix" aria-selected="true">Pix</button>
+                <button type="button" class="seletor__opcao" role="tab" id="aba-boleto" aria-controls="painel-boleto" aria-selected="false" tabindex="-1">Boleto</button>
+                <button type="button" class="seletor__opcao" role="tab" id="aba-cartao" aria-controls="painel-cartao" aria-selected="false" tabindex="-1">Cartão</button>
+              </div>
 
-            <div class="opcao">
-              <p class="opcao__texto">Pelo <strong>App Bulbe</strong></p>
-              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M6.74475 6.675C6.92696 6.15704 7.28659 5.72028 7.75996 5.44208C8.23334 5.16387 8.78989 5.06218 9.33106 5.155C9.87223 5.24783 10.3631 5.52918 10.7167 5.94923C11.0703 6.36929 11.2638 6.90093 11.263 7.45C11.263 9 8.938 9.775 8.938 9.775M9 12.875H9.00775M16.75 9C16.75 13.2802 13.2802 16.75 9 16.75C4.71979 16.75 1.25 13.2802 1.25 9C1.25 4.71979 4.71979 1.25 9 1.25C13.2802 1.25 16.75 4.71979 16.75 9Z" stroke="#98A2B3" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-              <button type="button" class="botao">Abrir</button>
-            </div>
+              <!-- Pix -->
+              <div class="pagar__painel pagar__painel--centro" role="tabpanel" id="painel-pix" aria-labelledby="aba-pix">
+                <img class="pagar__qr" src="qr-pix.svg" width="141" height="141" alt="QR Code do Pix da fatura">
+                <p class="pagar__legenda">Escaneie o QR Code com o app do seu banco</p>
+                <p class="pagar__campo-rotulo">Pix copia e cola</p>
+                <p class="pagar__codigo" id="codigo-pix">PIX-FICTICIO-0001</p>
+                <button type="button" class="botao botao--grande" data-copiar="codigo-pix">Copiar código Pix</button>
+                <p class="pagar__legenda">Recebedor: BULBE ENERGIA LTDA</p>
+              </div>
+
+              <!-- Boleto -->
+              <div class="pagar__painel" role="tabpanel" id="painel-boleto" aria-labelledby="aba-boleto" hidden>
+                <p class="pagar__campo-rotulo">Linha digitável</p>
+                <p class="pagar__codigo" id="linha-digitavel">34191.79001 01043.510047 91020.150008 1 84330000016840</p>
+                <button type="button" class="botao botao--grande" data-copiar="linha-digitavel">Copiar linha digitável</button>
+                <!-- Troque o href pelo PDF do boleto -->
+                <a href="#" class="botao botao--grande botao--contorno">Baixar boleto em PDF</a>
+                <p class="pagar__aviso">O pagamento por boleto pode levar até 3 dias úteis para ser confirmado.</p>
+              </div>
+
+              <!-- Cartão de crédito -->
+              <form class="pagar__painel" role="tabpanel" id="painel-cartao" aria-labelledby="aba-cartao" novalidate hidden>
+                <label class="campo">
+                  <span class="pagar__campo-rotulo">Número do cartão</span>
+                  <input class="campo__entrada" id="cartao-numero" name="numero" inputmode="numeric" autocomplete="cc-number" placeholder="0000 0000 0000 0000" maxlength="19" required>
+                </label>
+                <label class="campo">
+                  <span class="pagar__campo-rotulo">Nome impresso no cartão</span>
+                  <input class="campo__entrada" id="cartao-nome" name="nome" autocomplete="cc-name" placeholder="Como está no cartão" required>
+                </label>
+                <div class="pagar__linha">
+                  <label class="campo">
+                    <span class="pagar__campo-rotulo">Validade</span>
+                    <input class="campo__entrada" id="cartao-validade" name="validade" inputmode="numeric" autocomplete="cc-exp" placeholder="MM/AA" maxlength="5" required>
+                  </label>
+                  <label class="campo">
+                    <span class="pagar__campo-rotulo">CVV</span>
+                    <input class="campo__entrada" id="cartao-cvv" name="cvv" inputmode="numeric" autocomplete="cc-csc" placeholder="123" maxlength="4" required>
+                  </label>
+                </div>
+                <button type="submit" class="botao botao--grande" id="botao-cartao">Pagar R$ 168,40</button>
+                <p class="pagar__seguro">
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M9.5 5.5946H2.5C1.94772 5.5946 1.5 5.95837 1.5 6.4071V9.25085C1.5 9.69959 1.94772 10.0634 2.5 10.0634H9.5C10.0523 10.0634 10.5 9.69959 10.5 9.25085V6.4071C10.5 5.95837 10.0523 5.5946 9.5 5.5946Z" stroke="#18814D" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M3.50049 5.5946V3.9696C3.50049 3.43088 3.76388 2.91423 4.23272 2.53329C4.70156 2.15236 5.33745 1.93835 6.00049 1.93835C6.66353 1.93835 7.29941 2.15236 7.76826 2.53329C8.2371 2.91423 8.50049 3.43088 8.50049 3.9696V5.5946" stroke="#18814D" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  Dados protegidos e criptografados
+                </p>
+              </form>
+
+              <p class="pagar__mensagem" id="pagar-mensagem" role="status"></p>
+            </section>
           </div>
         </li>
       </ol>
@@ -242,6 +295,6 @@
   </div>
   </div>
 
-  <script src="script.js"></script>
+  <script type="module" src="script.js"></script>
 </body>
 </html>
