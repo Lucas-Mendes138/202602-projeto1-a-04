@@ -62,13 +62,16 @@
 
 <div class="notif">
 
+    <!-- Controle do "Marcar como lidas" (checkbox escondido, sem JavaScript) -->
+    <input type="checkbox" id="notif-lidas" class="notif__lidas-controle" aria-label="Marcar avisos como lidos">
+
     <!-- Título -->
     <div class="notif__cabecalho">
       <div>
         <h1 class="notif__titulo">Notificações</h1>
         <p class="notif__subtitulo">Acompanhe as novidades do seu produto</p>
       </div>
-      <span class="notif__selo">2 novas</span>
+      <span class="notif__selo">1 nova</span>
     </div>
 
     <!-- Andamento do pedido -->
@@ -137,26 +140,13 @@
     <section class="notif__atualizacoes" aria-labelledby="notif-ultimas">
       <div class="notif__atualizacoes-topo">
         <h2 class="notif__atualizacoes-titulo" id="notif-ultimas">Últimas atualizações</h2>
-        <button class="notif__link" type="button">Marcar como lidas</button>
+        <label class="notif__link" for="notif-lidas"><span class="notif__link-a">Marcar como lidas</span><span class="notif__link-b">Marcar como não lidas</span></label>
       </div>
 
-      <!-- Troque os href="#" pelo link da página de detalhe de cada aviso -->
+      <!-- Cada aviso abre a sua página de detalhe -->
       <ul class="notif__lista">
         <li>
-          <a class="notif__item notif__item--nova" href="#">
-            <span class="notif__item-icone">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>
-            </span>
-            <span class="notif__item-texto">
-              <span class="notif__item-titulo">Uma nova etapa foi concluída <i class="notif__ponto"></i><span class="notif__so-leitor">(não lida)</span></span>
-              <span class="notif__item-descricao">A análise do seu produto foi finalizada. Agora vamos iniciar a preparação.</span>
-              <time class="notif__item-data">Hoje, às 09:42</time>
-            </span>
-            <svg class="notif__seta" width="8" height="14" viewBox="0 0 8 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1.5 1.5L7 7l-5.5 5.5"/></svg>
-          </a>
-        </li>
-        <li>
-          <a class="notif__item notif__item--nova" href="#">
+          <a class="notif__item notif__item--nova" href="resumo-quinzenal/index.html">
             <span class="notif__item-icone">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M12 7v5.2l3.2 2"/></svg>
             </span>
@@ -164,19 +154,6 @@
               <span class="notif__item-titulo">Seu resumo quinzenal chegou <i class="notif__ponto"></i><span class="notif__so-leitor">(não lida)</span></span>
               <span class="notif__item-descricao">Está tudo certo por aqui. A previsão para o produto ficar pronto continua a mesma.</span>
               <time class="notif__item-data">15 de maio, às 14:18</time>
-            </span>
-            <svg class="notif__seta" width="8" height="14" viewBox="0 0 8 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1.5 1.5L7 7l-5.5 5.5"/></svg>
-          </a>
-        </li>
-        <li>
-          <a class="notif__item" href="#">
-            <span class="notif__item-icone">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"/></svg>
-            </span>
-            <span class="notif__item-texto">
-              <span class="notif__item-titulo">Produto em análise</span>
-              <span class="notif__item-descricao">Recebemos sua solicitação e nossa equipe já começou a cuidar de tudo.</span>
-              <time class="notif__item-data">30 de abril, às 10:05</time>
             </span>
             <svg class="notif__seta" width="8" height="14" viewBox="0 0 8 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1.5 1.5L7 7l-5.5 5.5"/></svg>
           </a>
