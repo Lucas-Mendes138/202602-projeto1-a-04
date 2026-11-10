@@ -219,7 +219,7 @@ body {
    Conteúdo do <main class="conteudo"> do template da Squad 04.
    Padrões da jornada de contrato do Figma "Bulbe :: IBMEC"
    (card de progresso, card principal, painéis cinza com
-   rótulo em caixa alta, avisos com borda, toggle e chips)
+   rótulo em caixa alta, avisos com borda, botão de confirmação e chips)
    ========================================================== */
 :root {
   /* Azul Universo (primária) */
@@ -351,6 +351,11 @@ body {
 }
 
 /* ---------- Card principal ---------- */
+/* Régua de alinhamento: todo card de borda 2px (aviso, painéis, chips, confirmação)
+   começa o conteúdo no mesmo ponto; ícones caem na mesma coluna e o texto depois
+   do ícone começa sempre em --recuo + 34px (ícone de 24px + 10px de espaço) */
+:root { --recuo: 24px; }
+
 .main-card {
   display: flex;
   flex-direction: column;
@@ -379,7 +384,7 @@ body {
   display: flex;
   align-items: flex-start;
   gap: 8px;
-  padding: 16px;
+  padding: 16px var(--recuo);
   border: 2px solid;
   border-radius: var(--radius-md);
   font-size: 13px;
@@ -400,7 +405,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  padding: 24px;
+  padding: var(--recuo);
   border: 2px solid var(--gray-150);
   border-radius: var(--radius-md);
   background: var(--gray-50);
@@ -450,7 +455,8 @@ body {
 /* ---------- Duas contas ---------- */
 .bills {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  /* Colunas sempre iguais: o selo maior ("Pague só esta") não empurra o par para a direita */
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 8px;
 }
 
@@ -464,7 +470,11 @@ body {
   border: 1px solid var(--gray-100);
   border-radius: var(--radius-md);
 }
-.bill--active { border: 2px solid var(--verde-flora-200); }
+/* Borda grossa feita com sombra interna: o conteúdo fica na mesma altura do card ao lado */
+.bill--active {
+  border-color: var(--verde-flora-200);
+  box-shadow: inset 0 0 0 1px var(--verde-flora-200);
+}
 
 .bill__title {
   margin: 8px 0 10px;
@@ -491,9 +501,11 @@ body {
 .status--flora { background: var(--verde-flora-50); border-color: var(--verde-flora-200); color: var(--verde-flora-700); }
 
 /* ---------- Itens da conta ---------- */
+/* Ícone, nome e valor presos no topo: se o nome quebrar em duas linhas,
+   o ícone e o valor continuam na 1ª linha (nome 20px + descrição 16px = ícone de 36px) */
 .item {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 10px;
   padding-bottom: 12px;
 }
@@ -507,6 +519,7 @@ body {
 .item__name {
   font-size: 13px;
   font-weight: 500;
+  line-height: 20px;
 }
 
 .item__desc {
@@ -519,6 +532,7 @@ body {
 .item__value {
   font-size: 13px;
   font-weight: 600;
+  line-height: 20px; /* na mesma linha do nome */
   white-space: nowrap;
 }
 .item__value--primary { color: var(--azul-universo-700); }
@@ -552,7 +566,8 @@ body {
 }
 
 .compare__box--highlight {
-  border: 2px solid var(--verde-flora-200);
+  border-color: var(--verde-flora-200);
+  box-shadow: inset 0 0 0 1px var(--verde-flora-200);
   background: var(--verde-flora-50);
 }
 
@@ -566,6 +581,7 @@ body {
   margin-top: 2px;
   font-size: 18px;
   font-weight: 600;
+  white-space: nowrap; /* "R$ 248,57" sempre numa linha, igual ao valor do lado */
   color: var(--azul-universo-700);
 }
 .compare__value--old {
@@ -577,11 +593,13 @@ body {
 .timeline__step {
   position: relative;
   display: flex;
-  align-items: center;
+  /* bolinha presa no topo: quando o texto quebra em duas linhas, a linha vertical continua reta */
+  align-items: flex-start;
   gap: 10px;
   padding-bottom: 12px;
 }
 .timeline__step:last-child { padding-bottom: 0; }
+/* linha que liga o fim de uma bolinha ao começo da próxima, sempre no centro delas */
 .timeline__step:not(:last-child)::after {
   content: "";
   position: absolute;
@@ -607,62 +625,78 @@ body {
 .timeline__dot--sol { background: var(--amarelo-sol-500); }
 
 .timeline__step p {
+  padding-top: 1px; /* centraliza a 1ª linha do texto com a bolinha de 24px */
   font-size: 13px;
   font-weight: 500;
   line-height: 22px;
 }
 
+<<<<<<< Updated upstream
 /* ---------- Toggle de aceite ---------- */
 .toggle {
   position: relative; /* mantém o checkbox escondido dentro do toggle */
+=======
+/* ---------- Botão de confirmação do aceite ---------- */
+.confirm {
+>>>>>>> Stashed changes
   display: flex;
-  align-items: center;
+  /* quadradinho alinhado à 1ª linha do texto, como as bolinhas da linha do tempo */
+  align-items: flex-start;
   gap: 10px;
-  padding-top: 12px;
-  border-top: 1px solid var(--gray-100);
+  min-height: 48px;
+  padding: 12px var(--recuo);
+  border: 2px solid var(--gray-150);
+  border-radius: 12px;
+  background: var(--white);
   cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s;
 }
-.toggle input {
+.confirm:hover { background: var(--gray-50); }
+.confirm input {
   position: absolute;
   opacity: 0;
   pointer-events: none;
 }
-.toggle__track {
-  position: relative;
+.confirm__check {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
-  width: 40px;
+  width: 22px;
   height: 22px;
-  border-radius: var(--radius-pill);
-  background: var(--gray-400);
-  transition: background-color 0.2s;
-}
-.toggle__track::after {
-  content: "";
-  position: absolute;
-  top: 2px;
-  left: 2px;
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
+  margin: 0 1px; /* ocupa 24px, a mesma coluna das bolinhas e dos ícones */
+  border: 2px solid var(--gray-400);
+  border-radius: 6px; /* quadradinho de marcar */
   background: var(--white);
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s;
+  color: transparent;
+  font-size: 14px;
+  transition: background-color 0.2s, border-color 0.2s, color 0.2s;
 }
-.toggle input:checked + .toggle__track { background: var(--verde-flora-500); }
-.toggle input:checked + .toggle__track::after { transform: translateX(18px); }
-.toggle input:focus-visible + .toggle__track {
+.confirm__text {
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 22px; /* mesma altura de linha da linha do tempo */
+  color: var(--gray-700);
+}
+/* Confirmado: verde, com o check marcado */
+.confirm:has(input:checked) {
+  border-color: var(--verde-flora-200);
+  background: var(--verde-flora-50);
+}
+.confirm input:checked + .confirm__check {
+  border-color: var(--verde-flora-500);
+  background: var(--verde-flora-500);
+  color: var(--white);
+}
+.confirm input:checked ~ .confirm__text { color: var(--verde-flora-700); }
+.confirm:has(input:focus-visible) {
   outline: 2px solid var(--azul-universo-700);
   outline-offset: 2px;
-}
-.toggle__text {
-  font-size: 13px;
-  line-height: 18px;
-  color: var(--gray-700);
 }
 .required { color: var(--vermelho-500); }
 
 /* Mensagem quando tenta confirmar sem marcar o aceite (script.js) */
-.toggle__erro {
+.confirm__erro {
   margin-top: -8px;
   font-size: 11px;
   line-height: 16px;
@@ -671,23 +705,23 @@ body {
 
 /* ---------- Chips (padrão dos links de documento) ---------- */
 .chips {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-direction: column;
   gap: 8px;
 }
 
 .chip {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   min-width: 0;
-  height: 36px;
-  padding: 0 12px;
+  height: 44px;
+  padding: 0 calc(var(--recuo) + 1px); /* borda de 1px: conteúdo no mesmo ponto dos painéis */
   border: 1px solid var(--gray-150);
   border-radius: 10px;
   background: var(--white);
-  font-size: 12px;
-  line-height: 18px;
+  font-size: 13px; /* mesmo tamanho e altura de linha dos outros textos com ícone */
+  line-height: 22px;
   color: var(--gray-600);
   transition: background-color 0.2s;
 }
@@ -697,24 +731,35 @@ body {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.chip i { font-size: 13px; flex-shrink: 0; color: var(--gray-600); }
+.chip i { font-size: 16px; flex-shrink: 0; color: var(--gray-600); }
+.chip i:first-child { width: 24px; text-align: center; } /* mesma coluna das bolinhas */
 .chip:hover { background: var(--gray-50); }
 
-/* Em celulares estreitos o ícone final sai para o texto caber inteiro */
-@media (max-width: 420px) {
-  .chip { justify-content: center; }
-  .chip span { flex: 0 1 auto; }
-  .chip i:last-child { display: none; }
+/* "Entenda" em destaque: maior e na cor da marca */
+.chip--destaque {
+  height: 52px;
+  border-color: var(--azul-universo-700);
+  box-shadow: inset 0 0 0 1px var(--azul-universo-700);
+  background: var(--azul-universo-50);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--azul-universo-700);
 }
+.chip--destaque i { font-size: 18px; color: var(--azul-universo-700); }
+.chip--destaque:hover { background: var(--azul-universo-50); filter: brightness(0.97); }
 
-/* Celulares bem estreitos (até 380px): menos respiro para as duas contas e os chips caberem */
-@media (max-width: 380px) {
-  .main-card { padding-right: 16px; padding-left: 16px; }
-  .panel { padding: 16px; }
-  .bills { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+/* Em celulares estreitos as duas contas perdem um pouco de respiro lateral
+   para os selos caberem em colunas iguais */
+@media (max-width: 420px) {
   .bill { padding-right: 6px; padding-left: 6px; }
   .status { padding: 4px 8px; }
-  .chip { gap: 6px; padding: 0 8px; }
+}
+
+/* Celulares bem estreitos (até 380px): menos respiro para as duas contas caberem */
+@media (max-width: 380px) {
+  :root { --recuo: 16px; }
+  .main-card { padding-right: 16px; padding-left: 16px; }
+  .compare__value { font-size: 17px; } /* cabe numa linha nos celulares mais estreitos */
 }
 
 /* ---------- Botões ---------- */

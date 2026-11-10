@@ -178,22 +178,22 @@
               <p>Dezembro: chega sua 1ª conta Bulbe</p>
             </li>
           </ol>
-
-          <!-- Aceite (toggle, mesmo padrão do "titular está ciente") -->
-          <label class="toggle">
-            <input type="checkbox" id="aceite" name="aceite" required aria-describedby="aceite-erro">
-            <span class="toggle__track" aria-hidden="true"></span>
-            <span class="toggle__text">Entendi que só pago a conta Bulbe.<span class="required">*</span></span>
-          </label>
-          <p id="aceite-erro" class="toggle__erro" role="alert" hidden>Marque esta opção para confirmar a adesão.</p>
         </section>
 
-        <!-- Links rápidos (padrão dos chips de documento) -->
+        <!-- Links rápidos, um embaixo do outro; "Entenda" em destaque -->
         <div class="chips">
-          <a href="../como-funciona/index.html" class="chip"><i class="ti ti-help-circle"></i><span>Entenda</span><i class="ti ti-chevron-right"></i></a>
+          <a href="../como-funciona/index.html" class="chip chip--destaque"><i class="ti ti-help-circle"></i><span>Entenda</span><i class="ti ti-chevron-right"></i></a>
           <a href="#indique" class="chip"><i class="ti ti-gift"></i><span>Indique</span><i class="ti ti-chevron-right"></i></a>
           <a href="#selos" class="chip"><i class="ti ti-shield-check"></i><span>Garantias</span><i class="ti ti-chevron-right"></i></a>
         </div>
+
+        <!-- Aceite: botão de confirmação logo acima de "Confirmar adesão" -->
+        <label class="confirm">
+          <input type="checkbox" id="aceite" name="aceite" required aria-describedby="aceite-erro">
+          <span class="confirm__check" aria-hidden="true"><i class="ti ti-check"></i></span>
+          <span class="confirm__text">Entendi que só pago a conta Bulbe.<span class="required">*</span></span>
+        </label>
+        <p id="aceite-erro" class="confirm__erro" role="alert" hidden>Confirme que entendeu para concluir a adesão.</p>
 
         <button type="submit" class="button button--primary button--full">Confirmar adesão</button>
       </form>
