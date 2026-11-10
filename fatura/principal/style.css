@@ -631,14 +631,9 @@ body {
   line-height: 22px;
 }
 
-<<<<<<< Updated upstream
-/* ---------- Toggle de aceite ---------- */
-.toggle {
-  position: relative; /* mantém o checkbox escondido dentro do toggle */
-=======
 /* ---------- Botão de confirmação do aceite ---------- */
 .confirm {
->>>>>>> Stashed changes
+  position: relative; /* mantém o checkbox escondido dentro do botão (ajuste do Gabriel no antigo toggle) */
   display: flex;
   /* quadradinho alinhado à 1ª linha do texto, como as bolinhas da linha do tempo */
   align-items: flex-start;
