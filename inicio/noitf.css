@@ -147,7 +147,7 @@
 .notif__etapa {
   position: relative;
   display: flex;
-  gap: 17px;
+  gap: 20.5px;
   padding-bottom: 23px;
 }
  
@@ -157,7 +157,7 @@
 .notif__etapa::after {
   content: "";
   position: absolute;
-  left: 13px;
+  left: 35.5px;
   top: 28px;
   bottom: 3px;
   width: 2px;
@@ -173,7 +173,7 @@
   place-items: center;
   width: 24px;
   height: 24px;
-  margin: 1px 0 0 1px;
+  margin: 1px 0 0 24.5px;
   border-radius: 50%;
   background: var(--notif-trilho);
   color: #fff;
@@ -216,7 +216,7 @@
   color: var(--notif-azul);
 }
  
-.notif__proxima-icone { flex: none; }
+.notif__proxima-icone { flex: none; margin: 0 9.5px; }
 .notif__proxima-icone + div { padding-top: 2px; }
  
 .notif__proxima-rotulo {
@@ -274,7 +274,6 @@
   align-items: flex-start;
   gap: 13px;
   padding: 18px 17px 21px;
-  border-left: 4px solid transparent;
   border-radius: 14px;
   background: var(--notif-cartao);
   box-shadow: var(--notif-sombra);
@@ -282,8 +281,7 @@
   text-decoration: none;
 }
  
-/* Aviso não lido: barra laranja na lateral e ponto ao lado do título */
-.notif__item--nova { border-left-color: var(--notif-laranja); }
+/* Aviso não lido: só o ponto laranja ao lado do título (.notif__ponto) */
  
 .notif__item-icone {
   flex: none;
@@ -411,3 +409,164 @@
 .notif__interruptor input:checked + .notif__interruptor-trilho { background: var(--notif-laranja); }
 .notif__interruptor input:checked + .notif__interruptor-trilho::after { transform: translateX(19px); }
 .notif__interruptor input:focus-visible + .notif__interruptor-trilho { outline: 3px solid #fff; outline-offset: 2px; }
+
+/* ---------- Cards clicáveis: resposta ao toque ---------- */
+.notif__item { transition: box-shadow 0.15s, transform 0.15s; }
+.notif__item:hover { box-shadow: 0 2px 14px rgba(24, 24, 96, 0.14); }
+.notif__item:active { transform: scale(0.985); }
+.notif__item:focus-visible { outline: 3px solid var(--notif-azul); outline-offset: 2px; }
+
+/* ==========================================================================
+   Página de detalhe do aviso (etapa-concluida/ e resumo-quinzenal/)
+   Mesmo visual dos cards de contrato da Bulbe. Classes começam com "aviso".
+   ========================================================================== */
+.aviso-status,
+.aviso-card {
+  background: var(--branco, #fff);
+  border-radius: 16px;
+  box-shadow: 0 1px 8px rgba(24, 24, 96, 0.06);
+}
+
+.aviso-status { padding: 16px 20px 14px; }
+
+.aviso-status__linha {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.aviso-status__titulo { margin: 0; font-size: 14px; font-weight: 500; color: var(--texto); }
+.aviso-status__valor  { margin: 0; font-size: 15px; font-weight: 600; color: var(--texto); }
+
+.aviso-status__barra {
+  height: 6px;
+  margin: 10px 0 12px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #E6E9EF;
+}
+
+.aviso-status__progresso {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--bulbe-azul, #0762C7), var(--bulbe-verde, #26D07C));
+}
+
+.aviso-status__ajuda { margin: 0; font-size: 12px; color: #A0AABB; }
+
+.aviso-card {
+  margin-top: 12px;
+  padding: 24px 18px 18px;
+}
+
+.aviso-card__titulo {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--azul-bulbe);
+}
+
+.aviso-card__sub {
+  margin: 6px 0 18px;
+  font-size: 13px;
+  line-height: 1.4;
+  color: #A0AABB;
+}
+
+/* Caixa verde de destaque */
+.aviso-destaque {
+  padding: 14px 16px;
+  border: 1.5px solid #BFEBCF;
+  border-radius: 14px;
+  background: #F0FBF4;
+  font-size: 13px;
+  line-height: 1.55;
+  color: #2E7D52;
+}
+
+.aviso-destaque ul { margin: 0; padding-left: 18px; }
+.aviso-destaque li + li { margin-top: 4px; }
+.aviso-destaque strong { font-weight: 600; }
+
+.aviso-destaque__oferta {
+  margin: 12px 0 0;
+  padding-top: 10px;
+  border-top: 1px solid #CFEBD9;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #4C6B5B;
+}
+
+/* Caixa cinza com texto informativo */
+.aviso-detalhe {
+  margin-top: 14px;
+  padding: 16px;
+  border: 1.5px solid #E4E8EF;
+  border-radius: 14px;
+  background: #F8F9FC;
+}
+
+.aviso-detalhe__rotulo {
+  margin: 0 0 10px;
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--texto);
+}
+
+.aviso-detalhe__texto {
+  margin: 0;
+  padding: 12px 14px;
+  border: 1px solid #E4E8EF;
+  border-radius: 12px;
+  background: #fff;
+  font-size: 13px;
+  line-height: 1.65;
+  color: #5B6475;
+}
+
+/* Botão principal, igual ao "Concordar e assinar" */
+.aviso-botao {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  margin-top: 16px;
+  border-radius: 12px;
+  background: var(--azul-bulbe);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.aviso-botao:active { transform: scale(0.985); }
+.aviso-botao:focus-visible { outline: 3px solid var(--bulbe-azul, #0762C7); outline-offset: 2px; }
+
+/* Sem o texto de ajuda, a barra fecha o card */
+.aviso-status--sem-ajuda .aviso-status__barra { margin-bottom: 0; }
+.aviso-status--sem-ajuda { padding-bottom: 20px; }
+
+/* Logo um pouco mais para a direita nas páginas de detalhe */
+.topo--logo-direita { padding-right: 14px; }
+.topo--logo-direita .topo__logo svg { width: 102px; }
+
+/* ---------- "Marcar como lidas": funciona só com CSS (checkbox escondido + :has) ---------- */
+.notif__lidas-controle {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.notif__link { cursor: pointer; }
+.notif__link-b { display: none; }
+
+.notif:has(#notif-lidas:checked) .notif__link-a { display: none; }
+.notif:has(#notif-lidas:checked) .notif__link-b { display: inline; }
+.notif:has(#notif-lidas:checked) .notif__ponto,
+.notif:has(#notif-lidas:checked) .notif__selo { display: none; }
+.notif:has(#notif-lidas:focus-visible) .notif__link { outline: 2px solid var(--notif-azul); outline-offset: 3px; border-radius: 4px; }

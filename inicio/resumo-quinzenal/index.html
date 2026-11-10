@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Bulbe · Resumo quinzenal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../noitf.css">
+</head>
+<body>
+
+  <!-- Tela no tamanho do iPhone SE: tudo da tela fica aqui dentro -->
+  <div class="aparelho">
+  <div class="aparelho__tela">
+
+  <header class="topo topo--secundaria topo--logo-direita">
+    <a href="../index.html" class="topo__voltar" aria-label="Voltar para Notificações">
+      <svg width="20" height="20" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M6 1L1 6L6 11M1 6H7.4C10.7603 6 12.4405 6 13.7239 6.65396C14.8529 7.2292 15.7708 8.14708 16.346 9.27606C17 10.5595 17 12.2397 17 15.6V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+
+    <a href="../../inicio/index.html" class="topo__logo" aria-label="Bulbe, página inicial">
+      <svg width="102" height="30" viewBox="0 0 102 30" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M104.378 13.6785H92.6611V17.5656H104.378V13.6785Z" fill="#0762C7"/>
+        <path d="M100.005 1.24527L89.8574 7.1039L91.8015 10.4711L101.949 4.61248L100.005 1.24527Z" fill="#26D07C"/>
+        <path d="M91.8025 20.7742L89.8584 24.1414L100.006 30L101.95 26.6328L91.8025 20.7742Z" fill="#FF9E1B"/>
+        <path d="M35.3623 16.4018C35.3623 19.2172 33.0798 21.4998 30.2644 21.4998C27.449 21.4998 25.1674 19.2172 25.1674 16.4018V5.85814H21.2793V16.4018C21.2793 21.3646 25.3026 25.3869 30.2644 25.3869C35.2262 25.3869 39.2495 21.3636 39.2495 16.4018V5.85814H35.3623V16.4018Z" fill="white"/>
+        <path d="M9.76389 5.85814H5.87675V9.74626H9.76487V9.76389C13.0006 9.76389 15.624 12.3873 15.624 15.622C15.624 18.8567 13.0006 21.4802 9.76487 21.4802C6.52918 21.4802 3.90673 18.8577 3.90673 15.622H3.8891V0H0V15.623C0 21.0158 4.37107 25.3869 9.76389 25.3869C15.1567 25.3869 19.5278 21.0158 19.5278 15.623C19.5278 10.2302 15.1567 5.85814 9.76389 5.85814Z" fill="white"/>
+        <path d="M57.7883 5.85814H53.9002V9.74626H57.7883V9.76389C61.024 9.76389 63.6464 12.3873 63.6464 15.622C63.6464 18.8567 61.023 21.4802 57.7883 21.4802C54.5536 21.4802 51.9292 18.8577 51.9292 15.622H51.9116V0H48.0234V15.623C48.0234 21.0158 52.3955 25.3869 57.7883 25.3869C63.1811 25.3869 67.5522 21.0158 67.5522 15.623C67.5522 10.2302 63.1801 5.85912 57.7883 5.85912" fill="white"/>
+        <path d="M45.5805 0H41.6934V24.6159H45.5805V0Z" fill="white"/>
+        <path d="M77.0381 17.5666H88.5614C88.6887 16.9386 88.7553 16.2881 88.7553 15.623C88.7553 10.2302 84.3833 5.85909 78.9914 5.85909C73.5996 5.85909 69.2275 10.2302 69.2275 15.623C69.2275 21.0158 73.5996 25.3869 78.9914 25.3869H82.8786V21.4988H78.9914V21.4811C75.7557 21.4811 73.1323 18.8587 73.1323 15.623C73.1323 12.3873 75.7557 9.76484 78.9914 9.76484C81.5443 9.76484 83.7103 11.4008 84.5126 13.6794H77.0381V17.5666Z" fill="white"/>
+      </svg>
+    </a>
+  </header>
+
+  <!-- Conteúdo da tela: troque apenas esta parte -->
+  <main class="conteudo">
+
+    <!-- Card de andamento -->
+    <section class="aviso-status aviso-status--sem-ajuda" aria-label="Andamento do seu produto">
+      <div class="aviso-status__linha">
+        <p class="aviso-status__titulo">Atualização quinzenal</p>
+        <p class="aviso-status__valor">3 de 4 etapas</p>
+      </div>
+      <div class="aviso-status__barra" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" aria-label="Andamento do produto">
+        <div class="aviso-status__progresso" style="width: 75%;"></div>
+      </div>
+    </section>
+
+    <!-- Card principal do aviso -->
+    <section class="aviso-card">
+      <h1 class="aviso-card__titulo">Seu resumo quinzenal chegou</h1>
+      <p class="aviso-card__sub">15 de maio, às 14:18</p>
+
+      <div class="aviso-destaque">
+        <ul>
+          <li><strong>Está tudo certo por aqui.</strong></li>
+          <li>A previsão para o produto ficar pronto continua a mesma: <strong>18 de junho</strong>.</li>
+        </ul>
+        <p class="aviso-destaque__oferta"><strong>Etapa atual:</strong> esperando respostas da CEMIG. Nada para você fazer agora.</p>
+      </div>
+
+      <div class="aviso-detalhe">
+        <p class="aviso-detalhe__rotulo">Resumo da quinzena</p>
+        <p class="aviso-detalhe__texto">Nesta quinzena concluímos a análise do seu produto e seguimos aguardando a CEMIG. Você recebe um resumo como este a cada 15 dias, por e-mail, WhatsApp e pelo App.</p>
+      </div>
+
+      <a href="../index.html" class="aviso-botao">Voltar para notificações</a>
+    </section>
+
+  </main>
+
+  <nav class="navegacao" aria-label="Navegação principal">
+    <a href="../index.html" class="navegacao__item navegacao__item--ativo" aria-current="page">
+      <svg class="navegacao__icone icone-inicio" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path class="icone-inicio__azul" d="M23.6607 10.7024H15.7739V13.2982H23.6607V10.7024Z"/>
+        <path class="icone-inicio__verde" d="M20.7172 2.40003L13.8867 6.31189L15.1951 8.55989L22.0256 4.64802L20.7172 2.40003Z"/>
+        <path class="icone-inicio__laranja" d="M15.1956 15.4402L13.8872 17.6882L20.7176 21.6L22.026 19.352L15.1956 15.4402Z"/>
+        <path class="icone-inicio__e" d="M5.25783 13.2981H13.0142C13.0998 12.8788 13.1449 12.4445 13.1449 12.0001C13.1449 8.39951 10.2024 5.48059 6.57229 5.48059C2.9422 5.48059 0 8.39951 0 12.0001C0 15.6006 2.94256 18.5199 6.57229 18.5199H9.18908V15.9241H6.57229V15.9121C4.39438 15.9121 2.62892 14.1608 2.62892 12.0004C2.62892 9.84002 4.39438 8.08874 6.57229 8.08874C8.29074 8.08874 9.7488 9.18097 10.2887 10.7027H5.25783V13.2985V13.2981Z"/>
+      </svg>
+      <span class="navegacao__rotulo">Início</span>
+    </a>
+
+    <a href="../../fatura/principal/index.html" class="navegacao__item">
+      <svg class="navegacao__icone" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M14 2.26953V6.40007C14 6.96012 14 7.24015 14.109 7.45406C14.2049 7.64222 14.3578 7.7952 14.546 7.89108C14.7599 8.00007 15.0399 8.00007 15.6 8.00007H19.7305M16 13H8M16 17H8M10 9H8M14 2H8.8C7.11984 2 6.27976 2 5.63803 2.32698C5.07354 2.6146 4.6146 3.07354 4.32698 3.63803C4 4.27976 4 5.11984 4 6.8V17.2C4 18.8802 4 19.7202 4.32698 20.362C4.6146 20.9265 5.07354 21.3854 5.63803 21.673C6.27976 22 7.11984 22 8.8 22H15.2C16.8802 22 17.7202 22 18.362 21.673C18.9265 21.3854 19.3854 20.9265 19.673 20.362C20 19.7202 20 18.8802 20 17.2V8L14 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span class="navegacao__rotulo">Faturas</span>
+    </a>
+
+    <a href="../../creditos/index.html" class="navegacao__item">
+      <svg class="navegacao__icone" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M12 2V4M12 20V22M4 12H2M6.31412 6.31412L4.8999 4.8999M17.6859 6.31412L19.1001 4.8999M6.31412 17.69L4.8999 19.1042M17.6859 17.69L19.1001 19.1042M22 12H20M17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12Z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span class="navegacao__rotulo">Créditos</span>
+    </a>
+  </nav>
+
+  </div>
+  </div>
+
+</body>
+</html>
