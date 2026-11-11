@@ -6,8 +6,8 @@
   --fundo: #F4F7FB;
   --branco: #FFFFFF;
   --texto: #4B5C73;
-  --aba-inativa-icone: #C2CCD6;
-  --aba-inativa-texto: #6B7A90;
+  --aba-inativa-icone: #7B8899; /* WCAG: icone inativo 3,6:1 (antes #C2CCD6, 1,6:1) */
+  --aba-inativa-texto: #4B5C73; /* WCAG: 6,8:1 (antes #6B7A90, 4,36:1) */
   --linha: #E1E6EA;
   --lilas: #E7E7FE;
 
@@ -265,7 +265,7 @@ body {
 
 .status__ajuda {
   font-size: 14px;
-  color: #A4B3C1;
+  color: #4B5C73; /* WCAG: 6,8:1 (antes #A4B3C1, 2,1:1) */
 }
 
 /* card principal */
@@ -335,7 +335,7 @@ body {
   margin-top: 4px;
   font-size: 13px;
   line-height: 1.38;
-  color: #A4B3C1;
+  color: #4B5C73; /* WCAG: 6,8:1 (antes #A4B3C1, 2,1:1) */
 }
 
 .etapa__icone {
@@ -396,7 +396,7 @@ body {
 .etapa-atual__texto {
   font-size: 13px;
   line-height: 1.38;
-  color: #A4B3C1;
+  color: #4B5C73; /* WCAG: 6,8:1 (antes #A4B3C1, 2,1:1) */
 }
 
 .etapa-atual__subtitulo {
@@ -442,11 +442,11 @@ body {
 }
 
 .conta--pagar .conta__titulo span {
-  color: #76B796;
+  color: #18814D; /* WCAG: 4,7:1 (antes #76B796, 2,2:1) */
 }
 
 .conta--nao-pagar .conta__titulo span {
-  color: #EF4444;
+  color: #B91C1C; /* WCAG: 6,5:1 (antes #EF4444, 3,8:1) */
 }
 
 .conta__texto {
@@ -635,11 +635,11 @@ body {
 }
 
 .campo__entrada::placeholder {
-  color: #A4B3C1;
+  color: #64748B; /* WCAG: 4,8:1 (antes #A4B3C1, 2,1:1) */
 }
 
 .campo__entrada[aria-invalid="true"] {
-  border-color: #EF4444;
+  border-color: #B91C1C; /* WCAG: 6,5:1 (antes #EF4444, 3,8:1) */
 }
 
 .pagar__linha {
@@ -664,7 +664,7 @@ body {
 }
 
 .pagar__mensagem--erro {
-  color: #EF4444;
+  color: #B91C1C; /* WCAG: 6,5:1 (antes #EF4444, 3,8:1) */
 }
 
 .pagar__mensagem:empty {
@@ -674,12 +674,12 @@ body {
 .vencimento {
   font-size: 13px;
   line-height: 1.45;
-  color: #A4B3C1;
+  color: #4B5C73; /* WCAG: 6,8:1 (antes #A4B3C1, 2,1:1) */
 }
 
 .vencimento strong {
   font-weight: 600;
-  color: #8FA0B2;
+  color: #2D3748;
 }
 
 /* caixa de segurança */
