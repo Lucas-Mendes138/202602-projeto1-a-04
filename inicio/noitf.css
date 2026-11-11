@@ -55,6 +55,10 @@
   align-items: flex-start;
   justify-content: space-between;
   gap: 12px;
+  padding: 18px 17px 20px;
+  border-radius: 16px;
+  background: var(--notif-cartao);
+  box-shadow: var(--notif-sombra);
 }
  
 .notif__titulo {
@@ -142,7 +146,15 @@
 }
  
 /* ---------- Linha do tempo ---------- */
-.notif__etapas { margin-top: 5px; }
+.notif__etapas { margin-top: 20px; }
+
+/* Um quadro branco só para o "Esperando respostas" + as etapas */
+.notif__quadro {
+  padding: 16px 17px 18px;
+  border-radius: 16px;
+  background: var(--notif-cartao);
+  box-shadow: var(--notif-sombra);
+}
  
 .notif__etapa {
   position: relative;
@@ -157,7 +169,7 @@
 .notif__etapa::after {
   content: "";
   position: absolute;
-  left: 35.5px;
+  left: 18.5px;
   top: 28px;
   bottom: 3px;
   width: 2px;
@@ -173,13 +185,13 @@
   place-items: center;
   width: 24px;
   height: 24px;
-  margin: 1px 0 0 24.5px;
+  margin: 1px 0 0 7.5px;
   border-radius: 50%;
   background: var(--notif-trilho);
   color: #fff;
   font-size: 11px;
   font-weight: 600;
-  box-shadow: 0 0 0 2px var(--notif-fundo);
+  box-shadow: 0 0 0 2px var(--notif-cartao);
 }
  
 .notif__etapa--concluida .notif__marcador { background: var(--notif-verde); }
@@ -204,7 +216,7 @@
  
 /* ---------- Próxima atualização ---------- */
 .notif__proxima {
-  margin-top: 17px;
+  margin-top: 0;
   display: flex;
   align-items: center;
   gap: 13px;
