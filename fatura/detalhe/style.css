@@ -1,0 +1,593 @@
+/* ===== Template de tela · Bulbe · Squad 04 ===== */
+
+/* ===== Cores e medidas (tiradas do Figma) ===== */
+:root {
+  --azul-bulbe: #08068D;
+  --fundo: #F4F7FB;
+  --branco: #FFFFFF;
+  --texto: #4B5C73;
+  --aba-inativa-icone: #C2CCD6;
+  --aba-inativa-texto: #6B7A90;
+  --linha: #E1E6EA;
+  --lilas: #E7E7FE;
+
+  /* cores do símbolo da Bulbe (ícone Início ativo) */
+  --bulbe-azul: #0762C7;
+  --bulbe-verde: #26D07C;
+  --bulbe-laranja: #FF9E1B;
+
+  --altura-topo: 72px;
+  --altura-navegacao: 64px;
+  --largura-maxima: 375px; /* iPhone SE: 375 x 667 */
+}
+
+/* ===== Reset e base ===== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', Arial, sans-serif;
+  color: var(--texto);
+  background-color: var(--fundo);
+}
+
+/* ===== Barra do topo ===== */
+.topo {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--altura-topo);
+  max-width: var(--largura-maxima);
+  margin: 0 auto;
+  padding: 0 20px;
+  background-color: var(--azul-bulbe);
+}
+
+.topo__logo {
+  display: flex;
+}
+
+.topo__logo svg {
+  width: 149px;
+  height: 30px;
+}
+
+.topo__perfil {
+  position: absolute;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  overflow: hidden;
+  color: var(--azul-bulbe);
+  background-color: var(--lilas);
+  border: 2px solid var(--branco);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* foto do usuário, quando houver */
+.topo__perfil img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* tela secundária: seta de voltar na esquerda e logo na direita */
+.topo--secundaria {
+  justify-content: space-between;
+  padding-left: 12px;
+}
+
+.topo__voltar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  color: var(--branco);
+}
+
+.topo__voltar svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* ===== Conteúdo da tela ===== */
+.conteudo {
+  max-width: var(--largura-maxima);
+  margin: 0 auto;
+  padding: 12px 12px calc(var(--altura-navegacao) + 24px + env(safe-area-inset-bottom));
+}
+
+.conteudo__titulo {
+  margin: 12px 6px 8px;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--azul-bulbe);
+}
+
+.conteudo__texto {
+  margin: 0 6px;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+/* ===== Barra de navegação ===== */
+.navegacao {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  display: flex;
+  max-width: var(--largura-maxima);
+  margin: 0 auto;
+  padding-bottom: env(safe-area-inset-bottom);
+  background-color: var(--branco);
+  border-top: 1px solid var(--linha);
+}
+
+.navegacao__item {
+  position: relative;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  height: var(--altura-navegacao);
+  padding-top: 10px;
+  color: var(--aba-inativa-icone);
+  text-decoration: none;
+}
+
+.navegacao__icone {
+  width: 24px;
+  height: 24px;
+}
+
+.navegacao__rotulo {
+  font-size: 12px;
+  line-height: 1.2;
+  color: var(--aba-inativa-texto);
+}
+
+/* aba ativa: ícone e texto em azul, com o traço em cima */
+.navegacao__item--ativo {
+  color: var(--azul-bulbe);
+}
+
+.navegacao__item--ativo .navegacao__rotulo {
+  font-weight: 600;
+  color: var(--azul-bulbe);
+}
+
+.navegacao__item--ativo::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 50%;
+  width: 40px;
+  height: 3px;
+  background-color: var(--azul-bulbe);
+  border-radius: 2px;
+  transform: translateX(-50%);
+}
+
+.navegacao__item:focus-visible,
+.topo__perfil:focus-visible,
+.topo__logo:focus-visible,
+.topo__voltar:focus-visible {
+  outline: 2px solid var(--bulbe-azul);
+  outline-offset: 2px;
+}
+
+/* ícone Início: cinza quando inativo, colorido quando ativo */
+.icone-inicio path {
+  fill: currentColor;
+}
+
+.navegacao__item--ativo .icone-inicio__e {
+  fill: var(--azul-bulbe);
+}
+
+.navegacao__item--ativo .icone-inicio__azul {
+  fill: var(--bulbe-azul);
+}
+
+.navegacao__item--ativo .icone-inicio__verde {
+  fill: var(--bulbe-verde);
+}
+
+.navegacao__item--ativo .icone-inicio__laranja {
+  fill: var(--bulbe-laranja);
+}
+
+/* ===== Tela de faturas: detalhe da fatura (HU05 · Lucas Mendes) ===== */
+/* seta de voltar no canto esquerdo, com a logo no centro e o perfil na direita */
+.topo__voltar--esquerda {
+  position: absolute;
+  left: 12px;
+}
+
+.conteudo p,
+.conteudo h1,
+.conteudo h2,
+.conteudo h3 {
+  margin: 0;
+}
+
+.conteudo a {
+  color: var(--azul-bulbe);
+}
+
+/* card principal */
+.resumo,
+.pix {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 22px 18px;
+  background-color: var(--branco);
+  border-radius: 20px;
+}
+
+.pix {
+  margin-top: 12px;
+}
+
+.resumo__cabecalho {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.resumo__titulo {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.27;
+  color: var(--azul-bulbe);
+}
+
+.resumo__intro {
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.resumo__intro strong,
+.aviso strong {
+  font-weight: 600;
+}
+
+/* selo verde (mesmo do card de segurança) */
+.selo {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #18814D;
+  background-color: var(--branco);
+  border: 1px solid #B1E8D7;
+  border-radius: 8px;
+}
+
+/* aviso laranja */
+.aviso {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  font-size: 14px;
+  line-height: 1.35;
+  color: #6B3F00;
+  background-color: #FFF4E6;
+  border-radius: 14px;
+}
+
+.aviso__icone {
+  flex-shrink: 0;
+}
+
+/* resumo da fatura */
+.fatura {
+  position: relative;
+  overflow: hidden;
+  padding: 18px 16px 0;
+  border: 1px solid var(--linha);
+  border-radius: 12px;
+}
+
+.fatura__faixa {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  height: 4px;
+}
+
+.fatura__faixa i {
+  flex: 1;
+}
+
+.fatura__faixa i:nth-child(1) { background-color: var(--bulbe-laranja); }
+.fatura__faixa i:nth-child(2) { background-color: var(--bulbe-verde); }
+.fatura__faixa i:nth-child(3) { background-color: var(--bulbe-azul); }
+
+.fatura__linha-topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.fatura__linha-topo h2 {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.fatura__status {
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--azul-bulbe);
+  background-color: var(--lilas);
+  border-radius: 8px;
+}
+
+.conteudo .fatura__valor {
+  margin-top: 4px;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -1px;
+  color: var(--azul-bulbe);
+}
+
+.fatura__dados {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 12px -16px 0;
+  border-top: 1px solid var(--linha);
+}
+
+.fatura__dados > div {
+  display: flex;
+  flex-direction: column;
+  padding: 12px 16px;
+}
+
+.fatura__dados > div + div {
+  border-left: 1px solid var(--linha);
+}
+
+.fatura__dados span {
+  font-size: 13px;
+  color: #A4B3C1;
+}
+
+.fatura__dados strong {
+  font-size: 16px;
+  font-weight: 600;
+  color: #2D3748;
+}
+
+/* economia (verde, como a conta que paga) */
+.economia {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+  background-color: #F0FDF4;
+  border: 1px solid #BBF7D0;
+  border-radius: 12px;
+}
+
+.economia__icone {
+  flex-shrink: 0;
+}
+
+.economia__texto {
+  flex: 1;
+}
+
+.economia__texto p {
+  font-size: 12.5px;
+  color: #18814D;
+}
+
+.economia__texto strong {
+  font-size: 20px;
+  font-weight: 700;
+  color: #18814D;
+}
+
+/* comparativo sem / com a Bulbe (igual ao "Quanto você vai pagar" da tela de Faturas) */
+.comparativo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.comparativo__caixa {
+  padding: 12px;
+  background-color: var(--branco);
+  border: 1px solid var(--linha);
+  border-radius: 12px;
+}
+
+.comparativo__caixa--destaque {
+  background-color: #F0FDF4;
+  border: 2px solid #BBF7D0;
+}
+
+.comparativo__rotulo {
+  font-size: 11px;
+  line-height: 16px;
+  color: #536679;
+}
+
+.conteudo .comparativo__valor {
+  margin-top: 2px;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--azul-bulbe);
+}
+
+.conteudo .comparativo__valor--antigo {
+  color: #A4B3C1;
+  text-decoration: line-through;
+}
+
+/* botões */
+.botao {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 92px;
+  height: 38px;
+  padding: 0 16px;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--branco);
+  background-color: var(--azul-bulbe);
+  border: 0;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.botao--grande {
+  width: 100%;
+  height: 49px;
+  font-size: 16px;
+}
+
+/* botão branco com borda azul */
+.conteudo a.botao {
+  color: var(--branco);
+  text-decoration: none;
+}
+
+.conteudo a.botao--contorno,
+.botao--contorno {
+  color: var(--azul-bulbe);
+  background-color: var(--branco);
+  border: 2px solid var(--azul-bulbe);
+}
+
+.botao:focus-visible {
+  outline: 2px solid var(--bulbe-azul);
+  outline-offset: 2px;
+}
+
+/* pix */
+.pix__cabecalho {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.pix__simbolo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  color: var(--azul-bulbe);
+  background-color: var(--lilas);
+  border-radius: 12px;
+}
+
+.pix__titulo {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.pix__valor {
+  display: block;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--azul-bulbe);
+}
+
+.pix__codigo {
+  display: block;
+  padding: 12px;
+  overflow: hidden;
+  font-family: ui-monospace, Menlo, Consolas, monospace;
+  font-size: 12px;
+  color: var(--aba-inativa-texto);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  background-color: var(--fundo);
+  border: 1px dashed var(--aba-inativa-icone);
+  border-radius: 12px;
+}
+
+/* quando a cópia automática falha, mostra o código inteiro */
+.pix__codigo--aberto {
+  white-space: normal;
+  word-break: break-all;
+}
+
+.mensagem-pix {
+  font-size: 13px;
+  text-align: center;
+  color: #18814D;
+}
+
+.mensagem-pix:empty {
+  display: none;
+}
+
+/* ===== Tela no tamanho do iPhone SE (só aparece assim em telas grandes, como no computador) ===== */
+@media (min-width: 600px) {
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 32px 0;
+    background-color: #E3E9F2;
+  }
+
+  /* cartão de 375 x 667 com cantos arredondados */
+  .aparelho {
+    position: relative;
+    flex-shrink: 0;
+    width: 375px;
+    height: 667px;
+    overflow: hidden;
+    background-color: var(--fundo);
+    border: 1px solid var(--linha);
+    border-radius: 28px;
+    box-shadow: 0 24px 64px rgba(8, 6, 141, 0.18);
+    transform: translateZ(0); /* faz o topo e a barra de navegação ficarem presos dentro do cartão */
+  }
+
+  /* a rolagem acontece dentro do cartão */
+  .aparelho__tela {
+    height: 100%;
+    overflow-y: auto;
+    scrollbar-width: none;
+  }
+
+  .aparelho__tela::-webkit-scrollbar {
+    display: none;
+  }
+}
